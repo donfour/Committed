@@ -1,0 +1,26 @@
+#checkbox{
+  display: inline-block;
+  border: 2px solid black;
+}
+
+#checkbox:hover{
+  cursor: pointer;
+}
+
+@keyframes tick{
+  0%{
+    stroke-dashoffset: 500;
+  }
+  100%{
+    stroke-dashoffset: 295;
+  }
+}
+
+.st0{
+    fill:#FFFFFF;
+    stroke:#000000;
+    stroke-width:20;
+    stroke-miterlimit:10;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+}

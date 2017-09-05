@@ -1,0 +1,25 @@
+.todo{
+  border-bottom: 1px solid black;
+}
+
+.todo-body{
+  display: flex;
+}
+
+.todo-checkbox{
+  flex: 0 0 30px;
+  padding-top: 20px
+}
+
+.todo-content{
+  flex: 1;
+  padding: 20px;
+  font-size: 29px;
+}
+
+.todo-move{
+  flex: 0 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
