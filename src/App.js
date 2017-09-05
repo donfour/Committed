@@ -7,11 +7,13 @@ class App extends Component {
   state = {
     todos: [
       {
+        id: 0,
         name: 'Work out',
         daysOfWeek: [true, false, false, false, false, false, false],
         completed: true
       },
       {
+        id: 1,
         name: 'Do 3 questions on Leetcode',
         daysOfWeek: [true, false, true, false, true, false, false],
         completed: false

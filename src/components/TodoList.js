@@ -19,7 +19,7 @@ export default class TodoList extends React.Component{
     }
 
     const items = reorder(
-      this.state.items,
+      this.props.todos,
       result.source.index,
       result.destination.index
     );
@@ -29,11 +29,30 @@ export default class TodoList extends React.Component{
 
   render(){
     return(
-      <div>
-        {this.props.todos.map((item)=>(
-          <TodoItem name={item.name} daysOfWeek={item.daysOfWeek} completed={item.completed}/>
-        ))}
-      </div>
+      <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
+        <Droppable droppableId="droppable">
+          {(provided, snapshot) => (
+            <div ref={provided.innerRef}>
+              {this.props.todos.map((item)=>(
+                <Draggable key={item.id} draggableId={item.id}>
+                  {(provided, snapshot) => (
+                    <div>
+                      <div
+                        ref={provided.innerRef}
+                        style={provided.draggableStyle}
+                        {...provided.dragHandleProps}
+                      >
+                        <TodoItem name={item.name} daysOfWeek={item.daysOfWeek} completed={item.completed}/>
+                      </div>
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     )
   }
 }

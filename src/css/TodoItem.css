@@ -16,10 +16,3 @@
   padding: 20px;
   font-size: 29px;
 }
-
-.todo-move{
-  flex: 0 0 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
