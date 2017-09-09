@@ -70,6 +70,14 @@ class App extends Component {
     this.updateTaskList(newTodoList);
   }
 
+  deleteAllTask(){
+    localStorage.clear();
+    this.setState({
+      counter: 0,
+      todos: []
+    })
+  }
+
   componentDidMount(){
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;

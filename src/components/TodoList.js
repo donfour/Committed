@@ -40,8 +40,19 @@ export default class TodoList extends React.Component{
     }
   }
 
+  updateTime(){
+    var timeNow = new Date();
+    this.setState({
+      timeNow: String(timeNow).split(' ').slice(0,5).join(' ')
+    })
+  }
+
+  componentDidMount(){
+    this.updateTime();
+    setInterval(this.updateTime.bind(this), 1000);
+  }
+
   render(){
-    console.log('this.props.todos', this.props.todos);
     return(
       <div className="todolist-container">
 
@@ -50,6 +61,7 @@ export default class TodoList extends React.Component{
           value={this.state.newTodo}
           onChange={(e)=>{this.setState({newTodo:e.target.value})}}
           onKeyPress={this.handleCreateNewTask.bind(this)}
+          placeholder={this.state.timeNow}
         />
 
         <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>

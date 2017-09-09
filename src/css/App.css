@@ -1,12 +1,15 @@
  @import url('https://fonts.googleapis.com/css?family=Lato');
 
+html, body, #root, .App{
+  height: 100%;
+}
+
  *{
    font-family: 'Lato', sans-serif;
  }
 
 .App{
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
