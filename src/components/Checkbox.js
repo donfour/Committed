@@ -3,7 +3,7 @@ import '../css/Checkbox.css';
 
 export default class Checkbox extends React.Component{
   state = {
-    isChecked: false,
+    isChecked: this.props.completed,
     style: {
       width: this.props.size,
       height: this.props.size,
@@ -12,16 +12,10 @@ export default class Checkbox extends React.Component{
 
   handleClick(){
     this.props.toggleTaskCompletion();
-    if(!this.state.isChecked){
+    if(!this.props.completed){
       this.refs.tick.style.animation = 'tick 0.3s ease-in-out forwards';
-      this.setState({
-        isChecked: true
-      })
     } else {
       this.refs.tick.style.animation = '';
-      this.setState({
-        isChecked: false
-      })
     }
   }
 

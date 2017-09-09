@@ -24,6 +24,7 @@ export default class TodoItem extends React.Component{
             <Checkbox
               size={25}
               toggleTaskCompletion={this.props.toggleTaskCompletion}
+              completed={this.props.completed}
             />
           </div>
           <div
