@@ -21,7 +21,9 @@ class App extends Component {
     var newTodoList = this.state.todos.slice(0);
     newTodoList.push(newTodo);
 
-
+    // save results
+    localStorage.setItem('todos', JSON.stringify(newTodoList));
+    localStorage.setItem('counter', this.state.counter + 1);
     this.setState({
       counter: this.state.counter + 1,
       todos: newTodoList
@@ -32,6 +34,7 @@ class App extends Component {
     this.setState({
       todos: newTodoList
     })
+    localStorage.setItem('todos', JSON.stringify(newTodoList));
   }
 
   toggleTaskCompletion(taskId){
@@ -65,6 +68,17 @@ class App extends Component {
       }
     }
     this.updateTaskList(newTodoList);
+  }
+
+  componentDidMount(){
+    const todos = JSON.parse(localStorage.getItem('todos')) || [];
+    const counter = localStorage.getItem('counter') || 0;
+    console.log('todos:', todos);
+    console.log('counter:', counter);
+    this.setState({
+      todos,
+      counter
+    })
   }
 
   render() {
