@@ -5,5 +5,11 @@
 .create-todo{
   width: 100%;
   border: none;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #4B4B4B;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.create-todo:focus{
+  outline: none;
 }

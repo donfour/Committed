@@ -51,7 +51,6 @@ export default class TodoList extends React.Component{
           onChange={(e)=>{this.setState({newTodo:e.target.value})}}
           onKeyPress={this.handleCreateNewTask.bind(this)}
         />
-        {/* <button onClick={this.handleCreateNewTask.bind(this)}>delete afterwards</button> */}
 
         <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
           <Droppable droppableId="droppable">
@@ -73,6 +72,7 @@ export default class TodoList extends React.Component{
                             completed={item.completed}
                             toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
                             toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
+                            deleteTask={()=>{this.props.deleteTask(item.id)}}
                           />
 
                         </div>

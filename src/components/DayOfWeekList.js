@@ -1,10 +1,11 @@
 import React from 'react';
 import DayOfWeek from './DayOfWeek';
+import '../css/DayOfWeekList.css';
 
 export default class DayOfWeekList extends React.Component{
   render(){
     return(
-      <div>
+      <div className="day-of-week-list">
         {this.props.daysOfWeek.map((day,i)=>{
           var dayName;
           switch(i){

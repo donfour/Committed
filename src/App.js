@@ -56,8 +56,18 @@ class App extends Component {
     this.updateTaskList(newTodoList);
   }
 
+  deleteTask(taskId){
+    var newTodoList = this.state.todos;
+    for(var i=0; i<newTodoList.length; i++){
+      if(newTodoList[i].id===taskId){
+        newTodoList.splice(i,1);
+        break;
+      }
+    }
+    this.updateTaskList(newTodoList);
+  }
+
   render() {
-    console.log('this.state.todos', this.state.todos);
     return (
       <div className="App">
         <TodoList
@@ -66,6 +76,7 @@ class App extends Component {
           toggleTaskCompletion={this.toggleTaskCompletion.bind(this)}
           toggleDayOfWeek={this.toggleDayOfWeek.bind(this)}
           createNewTask={this.createNewTask.bind(this)}
+          deleteTask={this.deleteTask.bind(this)}
         />
       </div>
     );
