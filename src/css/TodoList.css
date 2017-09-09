@@ -1,0 +1,9 @@
+.todolist-container{
+  width: 700px;
+}
+
+.create-todo{
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid gray;
+}

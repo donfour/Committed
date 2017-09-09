@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import '../css/TodoList.css';
 
 // helper function
 const reorder = (list, startIndex, endIndex) => {
@@ -12,6 +13,9 @@ const reorder = (list, startIndex, endIndex) => {
 };
 
 export default class TodoList extends React.Component{
+  state = {
+    newTodo: ''
+  }
   onDragEnd(result) {
     // dropped outside the list
     if (!result.destination) {
@@ -27,32 +31,61 @@ export default class TodoList extends React.Component{
     this.props.updateTaskList(items);
   }
 
+  handleCreateNewTask(e){
+    if(e.key === 'Enter'){
+      this.props.createNewTask(this.state.newTodo);
+      this.setState({
+        newTodo: ''
+      })
+    }
+  }
+
   render(){
+
     return(
-      <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
-        <Droppable droppableId="droppable">
-          {(provided, snapshot) => (
-            <div ref={provided.innerRef}>
-              {this.props.todos.map((item)=>(
-                <Draggable key={item.id} draggableId={item.id}>
-                  {(provided, snapshot) => (
-                    <div>
-                      <div
-                        ref={provided.innerRef}
-                        style={provided.draggableStyle}
-                        {...provided.dragHandleProps}
-                      >
-                        <TodoItem name={item.name} daysOfWeek={item.daysOfWeek} completed={item.completed}/>
+      <div className="todolist-container">
+
+        <input
+          className="create-todo"
+          value={this.state.newTodo}
+          onChange={(e)=>{this.setState({newTodo:e.target.value})}}
+          onKeyPress={this.handleCreateNewTask.bind(this)}
+        />
+        {/* <button onClick={this.handleCreateNewTask.bind(this)}>delete afterwards</button> */}
+
+        <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
+          <Droppable droppableId="droppable">
+            {(provided, snapshot) => (
+              <div ref={provided.innerRef}>
+                {this.props.todos.map((item)=>(
+                  <Draggable key={item.id} draggableId={item.id}>
+                    {(provided, snapshot) => (
+                      <div>
+                        <div
+                          ref={provided.innerRef}
+                          style={provided.draggableStyle}
+                          {...provided.dragHandleProps}
+                        >
+
+                          <TodoItem
+                            name={item.name}
+                            daysOfWeek={item.daysOfWeek}
+                            completed={item.completed}
+                            toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
+                            toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
+                          />
+
+                        </div>
+                        {provided.placeholder}
                       </div>
-                      {provided.placeholder}
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+                    )}
+                  </Draggable>
+                ))}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </div>
     )
   }
 }

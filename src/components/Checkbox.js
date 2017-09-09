@@ -3,10 +3,15 @@ import '../css/Checkbox.css';
 
 export default class Checkbox extends React.Component{
   state = {
-    isChecked: false
+    isChecked: false,
+    style: {
+      width: this.props.size,
+      height: this.props.size,
+    }
   }
 
   handleClick(){
+    this.props.toggleTaskCompletion();
     if(!this.state.isChecked){
       this.refs.tick.style.animation = 'tick 0.3s ease-in-out forwards';
       this.setState({
@@ -21,14 +26,9 @@ export default class Checkbox extends React.Component{
   }
 
   render(){
-    var style={
-      width: this.props.size,
-      height: this.props.size
-    }
-
     return(
       <div id="checkbox"
-        style={style}
+        style={this.state.style}
         onClick={this.handleClick.bind(this)}
       >
         <svg id="tick"  width="100%" viewBox="0 0 200 200">

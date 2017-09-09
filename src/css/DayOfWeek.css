@@ -1,0 +1,30 @@
+.underline {
+  text-align: center;
+  font-size: 23px;
+  color: #222;
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+  margin: 7px 10px;
+}
+.underline:hover,
+.underline:focus,
+.underline:active {
+  cursor: pointer;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  width: 100%;
+}
+.underline:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: darkgray;
+  width: 0;
+  -webkit-transition: width .4s;
+  transition: width .4s;
+}
