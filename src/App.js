@@ -23,9 +23,9 @@ class App extends Component {
 
     // save results
     localStorage.setItem('todos', JSON.stringify(newTodoList));
-    localStorage.setItem('counter', this.state.counter + 1);
+    localStorage.setItem('counter', parseInt(this.state.counter) + 1);
     this.setState({
-      counter: this.state.counter + 1,
+      counter: parseInt(this.state.counter) + 1,
       todos: newTodoList
     })
   }
