@@ -33,10 +33,12 @@ export default class TodoList extends React.Component{
 
   handleCreateNewTask(e){
     if(e.key === 'Enter'){
-      this.props.createNewTask(this.state.newTodo);
-      this.setState({
-        newTodo: ''
-      })
+      if(this.state.newTodo.trim()!==''){
+        this.props.createNewTask(this.state.newTodo);
+        this.setState({
+          newTodo: ''
+        })
+      }
     }
   }
 
