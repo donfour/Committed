@@ -13,9 +13,26 @@ export default class Checkbox extends React.Component{
   handleClick(){
     this.props.toggleTaskCompletion();
     if(!this.props.completed){
-      this.refs.tick.style.animation = 'tick 0.3s ease-in-out forwards';
+      this.setState({
+        strokeDashoffset: 295
+      })
     } else {
       this.refs.tick.style.animation = '';
+      this.setState({
+        strokeDashoffset: 500
+      })
+    }
+  }
+
+  componentDidMount(){
+    if(this.props.completed){
+      this.setState({
+        strokeDashoffset: 295
+      })
+    } else {
+      this.setState({
+        strokeDashoffset: 500
+      })
     }
   }
 
@@ -26,7 +43,7 @@ export default class Checkbox extends React.Component{
         onClick={this.handleClick.bind(this)}
       >
         <svg id="tick"  width="100%" viewBox="0 0 200 200">
-          <polyline ref="tick" className="st0" points="25.1,101 76.9,154 177,45.9"/>
+          <polyline ref="tick" className="st0" points="25.1,101 76.9,154 177,45.9" style={{strokeDashoffset: this.state.strokeDashoffset}}/>
         </svg>
       </div>
     )

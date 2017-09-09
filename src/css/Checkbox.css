@@ -8,15 +8,6 @@
   cursor: pointer;
 }
 
-@keyframes tick{
-  0%{
-    stroke-dashoffset: 500;
-  }
-  100%{
-    stroke-dashoffset: 295;
-  }
-}
-
 .st0{
     fill:#FFFFFF;
     stroke:#000000;
