@@ -98,9 +98,22 @@ export default class TodoList extends React.Component{
                         </Draggable>
                     )
                   } else {
-                    return null
+                    return (
+                      <Draggable key={item.id} draggableId={item.id}>
+                        {(provided, snapshot) => (
+                          <div>
+                            <div
+                              ref={provided.innerRef}
+                              style={provided.draggableStyle}
+                              {...provided.dragHandleProps}
+                              >
+                              </div>
+                              {provided.placeholder}
+                            </div>
+                          )}
+                      </Draggable>
+                    )
                   }
-
                 })}
               </div>
             )}
