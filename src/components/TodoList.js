@@ -70,31 +70,38 @@ export default class TodoList extends React.Component{
           <Droppable droppableId="droppable">
             {(provided, snapshot) => (
               <div ref={provided.innerRef}>
-                {this.props.todos.map((item)=>(
-                  <Draggable key={item.id} draggableId={item.id}>
-                    {(provided, snapshot) => (
-                      <div>
-                        <div
-                          ref={provided.innerRef}
-                          style={provided.draggableStyle}
-                          {...provided.dragHandleProps}
-                        >
+                {this.props.todos.map((item)=>{
+                  if(item.render){
+                    return (
+                      <Draggable key={item.id} draggableId={item.id}>
+                        {(provided, snapshot) => (
+                          <div>
+                            <div
+                              ref={provided.innerRef}
+                              style={provided.draggableStyle}
+                              {...provided.dragHandleProps}
+                              >
 
-                          <TodoItem
-                            name={item.name}
-                            daysOfWeek={item.daysOfWeek}
-                            completed={item.completed}
-                            toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
-                            toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
-                            deleteTask={()=>{this.props.deleteTask(item.id)}}
-                          />
+                                <TodoItem
+                                  name={item.name}
+                                  daysOfWeek={item.daysOfWeek}
+                                  completed={item.completed}
+                                  toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
+                                  toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
+                                  deleteTask={()=>{this.props.deleteTask(item.id)}}
+                                />
 
-                        </div>
-                        {provided.placeholder}
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
+                              </div>
+                              {provided.placeholder}
+                            </div>
+                          )}
+                        </Draggable>
+                    )
+                  } else {
+                    return null
+                  }
+
+                })}
               </div>
             )}
           </Droppable>

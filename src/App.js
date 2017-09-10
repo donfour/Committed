@@ -22,9 +22,21 @@ class App extends Component {
         }
       }
       if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){ //TODO: timeNow.toDateString()
-        console.log('I"m here!');
         todos.splice(i,1);
         i--;
+      }
+      if(!isRepeating && !todos[i].completed){
+        todos[i].render = true;
+      }
+      if(isRepeating){
+        if(todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){
+          todos[i].completed = false;
+        }
+        if(todos[i].daysOfWeek[timeNow.getDay()]){
+          todos[i].render = true;
+        } else {
+          todos[i].render = false;
+        }
       }
     }
     this.state = {
@@ -52,7 +64,8 @@ class App extends Component {
     localStorage.setItem('counter', parseInt(this.state.counter) + 1);
     this.setState({
       counter: parseInt(this.state.counter) + 1,
-      todos: newTodoList
+      todos: newTodoList,
+      showAll: false
     })
   }
 
@@ -106,46 +119,51 @@ class App extends Component {
     })
   }
 
-  // componentWillMount(){
-  //   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  //   const counter = localStorage.getItem('counter') || 0;
-  //
-  //   console.log('todos:', todos);
-  //   console.log('counter:', counter);
-  //
-  //   var timeNow = new Date();
-  //   console.log('timeNow.toDateString()', timeNow.toDateString());
-  //
-  //   // remove completed one-time todos
-  //   for(var i=0; i<todos.length; i++){
-  //     // check if the todo is repeating, i.e. one-time
-  //     var isRepeating = false;
-  //     for(var j=0; j<todos[i].daysOfWeek.length; j++){
-  //       if(todos[i].daysOfWeek[j]){
-  //         isRepeating = true;
-  //         break;
-  //       }
-  //     }
-  //     console.log('isRepeating', isRepeating);
-  //     console.log('todos[i].dayCompleted', todos[i].dayCompleted);
-  //     console.log('todos[i].completed', todos[i].completed);
-  //
-  //     if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){
-  //       console.log('I"m here!');
-  //       this.deleteTask(todos[i].id);
-  //     }
-  //
-  //   }
-  //
-  //   this.setState({
-  //     todos,
-  //     counter
-  //   })
-  // }
+  toggleShowAll(){
+    var todos = this.state.todos;
 
+    if(this.state.showAll){
+      var timeNow = new Date();
+      // remove completed one-time todos
+      for(var i=0; i<todos.length; i++){
+        // check if the todo is repeating, i.e. one-time
+        var isRepeating = false;
+        for(var j=0; j<todos[i].daysOfWeek.length; j++){
+          if(todos[i].daysOfWeek[j]){
+            isRepeating = true;
+            break;
+          }
+        }
+        if(isRepeating){
+          if(todos[i].daysOfWeek[timeNow.getDay()]){
+            todos[i].render = true;
+          } else {
+            todos[i].render = false;
+          }
+        }
+      }
+      this.setState({
+        showAll: false,
+        todos
+      })
+    } else {
+      for(var i=0; i<todos.length; i++){
+        todos[i].render = true;
+      }
+      this.setState({
+        showAll: true,
+        todos
+      })
+    }
+  }
   render() {
     return (
       <div className="App">
+
+        <button onClick={this.toggleShowAll.bind(this)}>
+          {this.state.showAll ? 'Show All' : 'Show today'}
+        </button>
+
         <TodoList
           todos={this.state.todos}
           updateTaskList={this.updateTaskList.bind(this)}
