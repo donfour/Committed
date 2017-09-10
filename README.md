@@ -1,6 +1,6 @@
 ## Committed
 
-Manage your weekly goals and todos a minimalist Chrome NewTab extension.
+Manage your weekly goals and todos a beautiful minimalist Chrome NewTab extension.
 
 ## Screenshots
 ![Alt text](/demo1.png?raw=true "Minimalist design")
