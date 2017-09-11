@@ -24,3 +24,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.edit-button{
+  margin-left: 10px;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+}
+
+.edit-button svg{
+  fill: lightgray;
+}
+
+.edit-button svg:hover{
+  fill: gray;
+  cursor: pointer;
+}
