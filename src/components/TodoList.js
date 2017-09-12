@@ -68,20 +68,24 @@ export default class TodoList extends React.Component{
 
         { this.props.editing ?
 
-            this.props.todos.map((item)=>(
-              <TodoItem
-                key={item.id}
-                name={item.name}
-                daysOfWeek={item.daysOfWeek}
-                completed={item.completed}
-                toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
-                toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
-                deleteTask={()=>{this.props.deleteTask(item.id)}}
-                editing={item.editing}
-                startEditMode={()=>{this.props.startEditMode(item.id)}}
-                endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
-              />
-            ))
+            this.props.todos.map((item)=>{
+              if(item.render){
+                return(<TodoItem
+                  key={item.id}
+                  name={item.name}
+                  daysOfWeek={item.daysOfWeek}
+                  completed={item.completed}
+                  toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
+                  toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
+                  deleteTask={()=>{this.props.deleteTask(item.id)}}
+                  editing={item.editing}
+                  startEditMode={()=>{this.props.startEditMode(item.id)}}
+                  endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
+                />)
+              } else {
+                return null;
+              }
+            })
           :
           (<DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
           <Droppable droppableId="droppable">
