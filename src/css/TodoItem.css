@@ -32,11 +32,24 @@
   width: 15px;
 }
 
+.taskname:hover .edit-button{
+  display: inline-block;
+}
+
 .edit-button svg{
   fill: lightgray;
 }
 
-.edit-button svg:hover{
-  fill: gray;
-  cursor: pointer;
+input#edit{
+  border: none;
+  padding: 0;
+  background-color: lightgray;
+  font-size: 20px;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 24px;
+}
+
+input#edit:focus{
+  outline: none;
 }

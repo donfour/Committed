@@ -53,7 +53,8 @@ class App extends Component {
       daysOfWeek: [false, false, false, false, false, false, false],
       completed: false,
       dayCompleted: timeNow.toDateString(),
-      render: true
+      render: true,
+      editing: false
     }
 
     var newTodoList = this.state.todos.slice(0);
@@ -115,8 +116,35 @@ class App extends Component {
     localStorage.clear();
     this.setState({
       counter: 0,
-      todos: []
+      todos: [],
+      editing: false
     })
+  }
+
+  startEditMode(taskId){
+    this.setState({
+      editing: true
+    })
+    var newTodoList = this.state.todos;
+    for(var i=0; i<newTodoList.length; i++){
+      if(newTodoList[i].id===taskId){
+        newTodoList[i].editing = true;
+      } else {
+        newTodoList[i].editing = false;
+      }
+    }
+    this.updateTaskList(newTodoList);
+  }
+
+  endEditMode(){
+    this.setState({
+      editing: false
+    })
+    var newTodoList = this.state.todos;
+    for(var i=0; i<newTodoList.length; i++){
+      newTodoList[i].editing = false;
+    }
+    this.updateTaskList(newTodoList);
   }
 
   toggleShowAll(){
@@ -177,12 +205,15 @@ class App extends Component {
         </div>
 
         <TodoList
+          editing={this.state.editing}
           todos={this.state.todos}
           updateTaskList={this.updateTaskList.bind(this)}
           toggleTaskCompletion={this.toggleTaskCompletion.bind(this)}
           toggleDayOfWeek={this.toggleDayOfWeek.bind(this)}
           createNewTask={this.createNewTask.bind(this)}
           deleteTask={this.deleteTask.bind(this)}
+          startEditMode={this.startEditMode.bind(this)}
+          endEditMode={this.endEditMode.bind(this)}
         />
       </div>
     );

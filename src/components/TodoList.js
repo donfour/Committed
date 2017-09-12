@@ -66,7 +66,24 @@ export default class TodoList extends React.Component{
           placeholder={this.state.timeNow}
         />
 
-        <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
+        { this.props.editing ?
+
+            this.props.todos.map((item)=>(
+              <TodoItem
+                key={item.id}
+                name={item.name}
+                daysOfWeek={item.daysOfWeek}
+                completed={item.completed}
+                toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
+                toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
+                deleteTask={()=>{this.props.deleteTask(item.id)}}
+                editing={item.editing}
+                startEditMode={()=>{this.props.startEditMode(item.id)}}
+                endEditMode={()=>{this.props.endEditMode()}}
+              />
+            ))
+          :
+          (<DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
           <Droppable droppableId="droppable">
             {(provided, snapshot) => (
               <div ref={provided.innerRef}>
@@ -89,6 +106,9 @@ export default class TodoList extends React.Component{
                                   toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
                                   toggleDayOfWeek={(dayOfWeek)=>{this.props.toggleDayOfWeek(item.id, dayOfWeek)}}
                                   deleteTask={()=>{this.props.deleteTask(item.id)}}
+                                  editing={item.editing}
+                                  startEditMode={()=>{this.props.startEditMode(item.id)}}
+                                  endEditMode={()=>{this.props.endEditMode()}}
                                 />
 
                               </div>
@@ -118,7 +138,8 @@ export default class TodoList extends React.Component{
               </div>
             )}
           </Droppable>
-        </DragDropContext>
+        </DragDropContext>)
+      }
       </div>
     )
   }

@@ -9,7 +9,8 @@ import { FONT_COLOR, COMPLETED_FONT_COLOR } from '../constants/constants';
 export default class TodoItem extends React.Component{
   state = {
     isOpened: false,
-    displayEditButton: false
+    displayEditButton: false,
+    value: this.props.name
   }
 
   toggleOpen(){
@@ -17,6 +18,30 @@ export default class TodoItem extends React.Component{
     this.setState({
       isOpened: newState
     })
+  }
+
+  handleChange(e){
+    this.setState({
+      value: e.target.value
+    })
+  }
+
+  handleSpanClick(e){
+    this.props.startEditMode();
+  }
+
+  handleInputClick(e){
+    e.stopPropagation();
+  }
+
+  handleBlur(){
+    this.props.endEditMode();
+  }
+
+  componentDidMount(){
+    if(this.props.editing){
+      document.getElementById('edit').focus();
+    }
   }
 
   render(){
@@ -34,10 +59,27 @@ export default class TodoItem extends React.Component{
             className="todo-content"
             onClick={()=>{this.toggleOpen()}}
             style={this.props.completed ? {color: COMPLETED_FONT_COLOR} : {color: FONT_COLOR}}
-            onMouseOver={()=>{this.setState({displayEditButton:true})}}
-            onMouseOut={()=>{this.setState({displayEditButton:false})}}
           >
-            {this.props.name}
+
+            {
+              this.props.editing ?
+              <input
+                id="edit"
+                value={this.state.value}
+                onChange={this.handleChange.bind(this)}
+                onClick={this.handleInputClick.bind(this)}
+                onBlur={this.handleBlur.bind(this)}
+              ></input>
+              :
+              <span
+                className="taskname"
+                onClick={this.handleSpanClick.bind(this)}
+                onMouseOver={()=>{this.setState({displayEditButton:true})}}
+                onMouseOut={()=>{this.setState({displayEditButton:false})}}
+              >
+                {this.props.name}
+              </span>
+            }
 
             <div
               className="edit-button"
