@@ -45,11 +45,11 @@ html, body, #root, .App{
 }
 
 .fox-icon-container{
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: fixed;
   bottom: 10px;
-  right: 5px;
+  right: 50px;
 }
 
 .fox-icon-container:hover .fox{
@@ -62,4 +62,21 @@ html, body, #root, .App{
   stroke: none;
   stroke-miterlimit:10;
   transition: all 0.3s;
+}
+
+.github-icon-container{
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+}
+
+.github-icon-container svg{
+  fill: lightgray;
+  transition: all 0.3s;
+}
+
+.github-icon-container:hover svg{
+  fill: gray;
 }
