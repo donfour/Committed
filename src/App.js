@@ -136,13 +136,16 @@ class App extends Component {
     this.updateTaskList(newTodoList);
   }
 
-  endEditMode(){
+  endEditMode(taskId, newName){
     this.setState({
       editing: false
     })
     var newTodoList = this.state.todos;
     for(var i=0; i<newTodoList.length; i++){
       newTodoList[i].editing = false;
+      if(newTodoList[i].id===taskId){
+        newTodoList[i].name = newName;
+      }
     }
     this.updateTaskList(newTodoList);
   }

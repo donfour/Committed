@@ -42,8 +42,11 @@
 
 input#edit{
   border: none;
+
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
+
   padding: 0;
-  background-color: lightgray;
   font-size: 20px;
   letter-spacing: 1px;
   width: 100%;

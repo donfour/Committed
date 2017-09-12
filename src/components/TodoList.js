@@ -79,7 +79,7 @@ export default class TodoList extends React.Component{
                 deleteTask={()=>{this.props.deleteTask(item.id)}}
                 editing={item.editing}
                 startEditMode={()=>{this.props.startEditMode(item.id)}}
-                endEditMode={()=>{this.props.endEditMode()}}
+                endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
               />
             ))
           :
@@ -108,7 +108,7 @@ export default class TodoList extends React.Component{
                                   deleteTask={()=>{this.props.deleteTask(item.id)}}
                                   editing={item.editing}
                                   startEditMode={()=>{this.props.startEditMode(item.id)}}
-                                  endEditMode={()=>{this.props.endEditMode()}}
+                                  endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
                                 />
 
                               </div>

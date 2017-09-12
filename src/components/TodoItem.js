@@ -35,7 +35,7 @@ export default class TodoItem extends React.Component{
   }
 
   handleBlur(){
-    this.props.endEditMode();
+    this.props.endEditMode(this.state.value);
   }
 
   componentDidMount(){
