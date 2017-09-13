@@ -1,6 +1,6 @@
 ## Committed
 
-Manage your weekly goals and todos a beautiful minimalist Chrome NewTab extension.
+Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
 ![Alt text](/demo1.png?raw=true "Minimalist design")
 
 ## Features
@@ -12,9 +12,9 @@ Manage your weekly goals and todos a beautiful minimalist Chrome NewTab extensio
 
 ## Play with the code yourself
 1. `git clone https://github.com/donfour/Committed.git`
-2. Edit the code however you want
-3. Type `npm run build` into your console
-4. Go into the build folder, change the content of manifest.json to the following (Chrome needs this file to load the extension):
+2. `npm install`, `npm start`, and see the app on localhost:3000. Edit the code however you want
+3. To actually have it running as a chrome extension, first type `npm run build` into your console
+4. Go into the build folder, change the content of manifest.json to the following (chrome needs this file to load the extension):
 `
 {
   "name": "Committed - NewTab Goals and Todos Manager",
@@ -30,13 +30,13 @@ Manage your weekly goals and todos a beautiful minimalist Chrome NewTab extensio
   }
 }
 `
-5. Zip the build folder
-6. Open the extension page by entering chrome://extensions/ into your Chrome browser's url
-7. Check the "Developer Mode" box on the top
-8. Click "Load unpacked extension..."
-9. Select and upload `build.zip`
-10. Open NewTab and enjoy!
+5. Open the extension page by entering chrome://extensions/ into your Chrome browser's url
+6. Check the "Developer Mode" box on the top
+7. Click "Load unpacked extension..."
+8. Select and upload `build.zip`
+9. Open NewTab and enjoy!
 
 ## Libraries used
 * Frontend: React
+* The collapsable menu in each todo: react-collapse
 * Drag-and-drop functionality: react-beautiful-dnd
