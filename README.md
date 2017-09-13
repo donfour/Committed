@@ -12,7 +12,7 @@ Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
 
 ## Play with the code yourself
 1. `git clone https://github.com/donfour/Committed.git`
-2. `npm install`, `npm start`, and see the app on localhost:3000. Edit the code however you want
+2. `npm install`, `npm start`, and see the app running on localhost:3000. Edit the code however you want
 3. To actually have it running as a chrome extension, first type `npm run build` into your console
 4. Go into the build folder, change the content of manifest.json to the following (chrome needs this file to load the extension):
 `
@@ -24,16 +24,13 @@ Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
   "manifest_version": 2,
    "chrome_url_overrides" : {
      "newtab": "index.html"
-   },
-   "icons": {
-    "128": "icon128.png"
-  }
+   }
 }
 `
 5. Open the extension page by entering chrome://extensions/ into your Chrome browser's url
 6. Check the "Developer Mode" box on the top
 7. Click "Load unpacked extension..."
-8. Select and upload `build.zip`
+8. Select and load your build folder
 9. Open NewTab and enjoy!
 
 ## Libraries used
