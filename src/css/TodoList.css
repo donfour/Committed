@@ -2,6 +2,15 @@
   width: 700px;
 }
 
+@media (max-width: 500px) {
+  .todolist-container{
+    width: 250px;
+  }
+  .create-todo{
+    display: none;
+  }
+}
+
 .create-todo{
   width: 100%;
   border: none;

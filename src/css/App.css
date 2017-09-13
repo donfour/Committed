@@ -80,3 +80,9 @@ html, body, #root, .App{
 .github-icon-container:hover svg{
   fill: gray;
 }
+
+@media (max-width: 500px) {
+  .fox-icon-container, .github-icon-container, .toggle-showall-button{
+    display: none;
+  }
+}

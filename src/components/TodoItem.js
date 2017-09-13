@@ -14,6 +14,9 @@ export default class TodoItem extends React.Component{
   }
 
   toggleOpen(){
+    if(window.innerWidth < 500){
+      return;
+    }
     const newState = !this.state.isOpened;
     this.setState({
       isOpened: newState
@@ -27,6 +30,9 @@ export default class TodoItem extends React.Component{
   }
 
   handleSpanClick(e){
+    if(window.innerWidth < 500){
+      return;
+    }
     this.props.startEditMode();
   }
 
@@ -74,7 +80,12 @@ export default class TodoItem extends React.Component{
               <span
                 className="taskname"
                 onClick={this.handleSpanClick.bind(this)}
-                onMouseOver={()=>{this.setState({displayEditButton:true})}}
+                onMouseOver={()=>{
+                  if(window.innerWidth < 500){
+                    return;
+                  }
+                  this.setState({displayEditButton:true});
+                }}
                 onMouseOut={()=>{this.setState({displayEditButton:false})}}
               >
                 {this.props.name}
