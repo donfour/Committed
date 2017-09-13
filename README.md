@@ -7,7 +7,7 @@ Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
 * Keep track of the time, your todos and goals in a clean interface
 * Create a goal by setting a todo on repeat
 * Drag-and-drop to organize your list
-* Edit your todo/goal by clicking on it
+* Edit your todo/goal by clicking on the text
 * Free and ads-free
 
 ## Play with the code yourself
