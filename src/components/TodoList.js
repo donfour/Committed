@@ -66,6 +66,8 @@ export default class TodoList extends React.Component{
           placeholder={this.state.timeNow}
         />
 
+        {this.props.todos.length===0 ? <span className="initial-text"></span> : null}
+
         { this.props.editing ?
 
             this.props.todos.map((item)=>{

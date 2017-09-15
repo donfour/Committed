@@ -1,13 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
   "name": "Committed",
   "description": "Manage your weekly goals and todos in your newtab",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "manifest_version": 2,
    "chrome_url_overrides" : {
      "newtab": "index.html"

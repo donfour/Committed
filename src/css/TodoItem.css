@@ -63,4 +63,7 @@ input#edit:focus{
   .todo-content{
     font-size: 15px;
   }
+  .todo-checkbox{
+    padding-top: 20px
+  }
 }
