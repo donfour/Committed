@@ -2,6 +2,8 @@
   display: inline-block;
   border: 2px solid black;
   background-color: white;
+  width: 18px;
+  height: 18px;
 }
 
 #checkbox:hover{
@@ -11,8 +13,19 @@
 .st0{
     fill:#FFFFFF;
     stroke:#000000;
-    stroke-width:20;
+    stroke-width:25;
     stroke-miterlimit:10;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
+}
+
+@media (max-width: 500px) {
+  .st0{
+    stroke-width: 30;
+    transform: translate(0,-30px);
+  }
+  #checkbox{
+    width: 14px;
+    height: 14px;
+  }
 }

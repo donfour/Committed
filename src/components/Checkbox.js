@@ -3,11 +3,7 @@ import '../css/Checkbox.css';
 
 export default class Checkbox extends React.Component{
   state = {
-    isChecked: this.props.completed,
-    style: {
-      width: this.props.size,
-      height: this.props.size,
-    }
+    isChecked: this.props.completed
   }
 
   handleClick(){
@@ -47,7 +43,6 @@ export default class Checkbox extends React.Component{
   render(){
     return(
       <div id="checkbox"
-        style={this.state.style}
         onClick={this.handleClick.bind(this)}
       >
         <svg id="tick"  width="100%" height="100%" viewBox="0 0 200 200">
