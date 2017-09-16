@@ -23,7 +23,7 @@ html, body, #root, .App{
   color: lightgray;
   background-color: white;
   letter-spacing: 2px;
-  width: 110px;
+  width: 130px;
   height: 22px;
   transition: all 0.3s;
 }
