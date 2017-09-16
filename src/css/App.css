@@ -80,3 +80,25 @@ html, body, #root, .App{
 .github-icon-container:hover svg{
   fill: gray;
 }
+
+.initial-text{
+  color: darkgray;
+  padding-left: 5px;
+}
+
+.initial-text:after{
+  content: "You don't have any task. Create a new task here!";
+  font-size: 16px;
+}
+
+@media (max-width: 500px) {
+  .fox-icon-container, .github-icon-container, .toggle-showall-button{
+    display: none;
+  }
+  .initial-text{
+    padding:0;
+  }
+  .initial-text:after{
+    content: "You don't have any task. Create a new task in your newtab page!";
+  }
+}

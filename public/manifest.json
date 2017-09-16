@@ -1,15 +1,17 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "name": "Committed",
+  "name": "Committed - NewTab Todo and Goal Manager",
+  "short_name": "Committed",
   "description": "Manage your weekly goals and todos in your newtab",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "manifest_version": 2,
    "chrome_url_overrides" : {
      "newtab": "index.html"
-   }
+   },
+   "browser_action": {
+    "default_icon": "icon128.png",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
 }

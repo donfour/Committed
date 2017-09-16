@@ -16,8 +16,9 @@
   padding: 20px;
   font-size: 20px;
   letter-spacing: 1px;
-  word-break: break-all;
-  word-wrap: break-word;
+  overflow: scroll;
+  /*word-break: break-all;
+  word-wrap: break-word;*/
 }
 
 .todo-footer-container{
@@ -56,4 +57,13 @@ input#edit{
 input#edit:focus{
   outline: none;
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .todo-content{
+    font-size: 15px;
+  }
+  .todo-checkbox{
+    padding-top: 20px
+  }
 }

@@ -21,10 +21,6 @@
   border-top-right-radius: 3px;
 
   transition: all ease 0.4s, background-color 0;
-  /*-webkit-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;*/
 }
 
 .delete-button:hover span.lib {
@@ -62,51 +58,3 @@
     transform: translateY(-5px) skewY(-10deg);
   }
 }
-
-/*@-webkit-keyframes lib {
-  0%,
-  100% {
-    -webkit-transform: translateY(0) skewY(0);
-  }
-  20% {
-    -webkit-transform: translateY(-5px) skewY(-10deg);
-  }
-  40% {
-    -webkit-transform: translateY(-5px) skewY(10deg);
-  }
-  80% {
-    -webkit-transform: translateY(-5px) skewY(-10deg);
-  }
-}
-
-@-o-keyframes lib {
-  0%,
-  100% {
-    -o-transform: translateY(0) skewY(0);
-  }
-  20% {
-    -o-transform: translateY(-5px) skewY(-10deg);
-  }
-  40% {
-    -o-transform: translateY(-5px) skewY(10deg);
-  }
-  80% {
-    -o-transform: translateY(-5px) skewY(-10deg);
-  }
-}
-
-@-moz-keyframes lib {
-  0%,
-  100% {
-    -moz-transform: translateY(0) skewY(0);
-  }
-  20% {
-    -moz-transform: translateY(-5px) skewY(-10deg);
-  }
-  40% {
-    -moz-transform: translateY(-5px) skewY(10deg);
-  }
-  80% {
-    -moz-transform: translateY(-5px) skewY(-10deg);
-  }
-}*/
