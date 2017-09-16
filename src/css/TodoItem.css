@@ -21,6 +21,10 @@
   word-wrap: break-word;*/
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .todo-footer-container{
   display: flex;
   justify-content: space-between;
