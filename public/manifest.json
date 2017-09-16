@@ -1,5 +1,6 @@
 {
-  "name": "Committed",
+  "name": "Committed - NewTab Todo and Goal Manager",
+  "short_name": "Committed",
   "description": "Manage your weekly goals and todos in your newtab",
   "version": "1.0.2",
   "manifest_version": 2,
