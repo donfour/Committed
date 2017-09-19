@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/DeleteButton.css';
+import '../../css/buttons/DeleteButton.css';
 
 export default class DeleteButton extends React.Component{
   render(){

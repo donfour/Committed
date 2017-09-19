@@ -63,6 +63,12 @@ input#edit:focus{
   width: 100%;
 }
 
+.todo-footer-buttons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 500px) {
   .todo-content{
     font-size: 15px;

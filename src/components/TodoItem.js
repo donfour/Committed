@@ -3,7 +3,8 @@ import Checkbox from './Checkbox';
 import { Collapse } from 'react-collapse';
 import '../css/TodoItem.css';
 import DayOfWeekList from './DayOfWeekList';
-import DeleteButton from './DeleteButton';
+import DeleteButton from './buttons/DeleteButton';
+import CalendarButton from './buttons/CalendarButton';
 import { FONT_COLOR, COMPLETED_FONT_COLOR } from '../constants/constants';
 
 export default class TodoItem extends React.Component{
@@ -114,7 +115,10 @@ export default class TodoItem extends React.Component{
               daysOfWeek={this.props.daysOfWeek}
               toggleDayOfWeek={this.props.toggleDayOfWeek}
             />
-            <DeleteButton deleteTask={this.props.deleteTask}/>
+            <div className="todo-footer-buttons-container">
+              <CalendarButton/>
+              <DeleteButton deleteTask={this.props.deleteTask}/>
+            </div>
           </div>
         </Collapse>
       </div>

@@ -55,7 +55,8 @@ class App extends Component {
       completed: false,
       dayCompleted: timeNow.toDateString(),
       render: true,
-      editing: false
+      editing: false,
+      dueDate: null
     }
 
     var newTodoList = this.state.todos.slice(0);
@@ -67,7 +68,9 @@ class App extends Component {
     this.setState({
       counter: parseInt(this.state.counter) + 1,
       todos: newTodoList,
-      showAll: false
+      showAll: false,
+      date: null,
+      focused: false
     })
   }
 
@@ -207,8 +210,6 @@ class App extends Component {
             </svg>
           </a>
         </div>
-
-
 
         <GithubIcon/>
 
