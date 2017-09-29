@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
+import CalendarModal from './components/CalendarModal';
 
 class App extends Component {
   constructor(props){
@@ -69,8 +70,9 @@ class App extends Component {
       counter: parseInt(this.state.counter) + 1,
       todos: newTodoList,
       showAll: false,
-      date: null,
-      focused: false
+      showCalendar: false,
+      focused: false,
+      calendarModalForTaskId: 0
     })
   }
 
@@ -192,10 +194,35 @@ class App extends Component {
     }
   }
 
+  // Calendar
+  handleOpenCalendar(taskId){
+    this.setState({
+      showCalendar: true,
+      calendarModalForTaskId: taskId
+    })
+  }
+
+  handleCloseCalendar(){
+    this.setState({
+      showCalendar: false
+    })
+  }
+
+  selectDueDate(taskId, dueDate){
+    let newTodoList = this.state.todos;
+    for(var i=0; i<newTodoList.length; i++){
+      if(newTodoList[i].id===taskId){
+        newTodoList[i].dueDate = dueDate;
+        break;
+      }
+    }
+    this.updateTaskList(newTodoList);
+  }
+
   render() {
     return (
       <div className="App">
-
+        <h1>{this.state.calendarModalForTaskId}</h1>
         <button
           className="toggle-showall-button"
           onClick={this.toggleShowAll.bind(this)}
@@ -211,6 +238,12 @@ class App extends Component {
           </a>
         </div>
 
+        <CalendarModal
+          handleOpenCalendar={this.handleOpenCalendar.bind(this)}
+          handleCloseCalendar={this.handleCloseCalendar.bind(this)}
+          showCalendar={this.state.showCalendar}
+        />
+
         <GithubIcon/>
 
         <TodoList
@@ -223,6 +256,7 @@ class App extends Component {
           deleteTask={this.deleteTask.bind(this)}
           startEditMode={this.startEditMode.bind(this)}
           endEditMode={this.endEditMode.bind(this)}
+          handleOpenCalendar={this.handleOpenCalendar.bind(this)}
         />
       </div>
     );

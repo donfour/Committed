@@ -10,6 +10,7 @@
     "react-collapse": "^4.0.3",
     "react-day-picker": "^6.1.0",
     "react-dom": "^15.6.1",
+    "react-modal": "^2.3.2",
     "react-motion": "^0.5.1",
     "react-scripts": "1.0.13"
   },

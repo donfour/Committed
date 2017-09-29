@@ -116,7 +116,9 @@ export default class TodoItem extends React.Component{
               toggleDayOfWeek={this.props.toggleDayOfWeek}
             />
             <div className="todo-footer-buttons-container">
-              <CalendarButton/>
+              <CalendarButton
+                handleOpenCalendar={this.props.handleOpenCalendar}
+              />
               <DeleteButton deleteTask={this.props.deleteTask}/>
             </div>
           </div>

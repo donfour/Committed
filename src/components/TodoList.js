@@ -83,6 +83,7 @@ export default class TodoList extends React.Component{
                   editing={item.editing}
                   startEditMode={()=>{this.props.startEditMode(item.id)}}
                   endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
+                  handleOpenCalendar={()=>{this.props.handleOpenCalendar(item.id)}}
                 />)
               } else {
                 return null;
@@ -115,6 +116,7 @@ export default class TodoList extends React.Component{
                                   editing={item.editing}
                                   startEditMode={()=>{this.props.startEditMode(item.id)}}
                                   endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
+                                  handleOpenCalendar={()=>{this.props.handleOpenCalendar(item.id)}}
                                 />
 
                               </div>

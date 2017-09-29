@@ -1,17 +1,12 @@
 import React from 'react';
 import '../../css/buttons/CalendarButton.css';
-import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
 
 export default class CalendarButton extends React.Component{
-  state={
-    show: false
-  }
   render(){
     return(
       <div
         className="calendar-button"
-        onClick={()=>{this.setState({show: !this.state.show})}}
+        onClick={this.props.handleOpenCalendar}
       >
         <svg id="calendar" width="100%" height="100%" viewBox="0 0 150 150">
             <path d="M13.3,126.4V37.4c0-2.4,0.9-4.5,2.6-6.3c1.7-1.8,3.8-2.6,6.2-2.6h8.8v-6.7c0-3.1,1.1-5.7,3.2-7.9
@@ -24,10 +19,6 @@ export default class CalendarButton extends React.Component{
               c0.4,0.4,0.9,0.6,1.6,0.6h4.4c0.6,0,1.2-0.2,1.6-0.6c0.4-0.4,0.6-0.9,0.6-1.6v-20c0-0.6-0.2-1.2-0.6-1.6
               c-0.4-0.4-0.9-0.6-1.6-0.6h-4.4c-0.6,0-1.2,0.2-1.6,0.6c-0.4,0.4-0.6,1-0.6,1.6V41.9z"/>
         </svg>
-
-        <div className="popup-calendar" style={this.state.show ? {display: 'block'} : {display: 'none'}}>
-          <DayPicker onDayClick={day => alert(day)} />
-        </div>
 
       </div>
     )
