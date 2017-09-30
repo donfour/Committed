@@ -44,6 +44,7 @@
 .remove-duedate-button{
   text-transform: uppercase;
   border: 2px white solid;
+  background-color: rgba(0,0,0,0);
   margin-top: 5px;
   color: white;
   letter-spacing: 2px;
@@ -53,8 +54,8 @@
 }
 
 .remove-duedate-button:hover{
-  border-color: darkgray;
-  color: darkgray;
+  border-color: gray;
+  color: gray;
   cursor: pointer;
 }
 
