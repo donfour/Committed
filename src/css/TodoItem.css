@@ -77,3 +77,9 @@ input#edit:focus{
     padding-top: 20px
   }
 }
+
+span.dueDate{
+  color: salmon;
+  font-size: 17px;
+  margin-left: 5px;
+}

@@ -21,8 +21,17 @@ export default class CalendarModal extends React.Component{
           >
 
             <div onClick={(e)=>{e.stopPropagation()}} style={{display:'inline'}}>
-              <DayPicker />
+              <DayPicker
+                onDayClick={day => this.props.selectDueDate(day)}
+              />
             </div>
+
+            <button
+              className="remove-duedate-button"
+              onClick={()=>this.props.selectDueDate(null)}
+            >
+              remove duedate
+            </button>
 
           </div>
         </ReactModal>

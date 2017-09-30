@@ -49,6 +49,13 @@ export default class TodoItem extends React.Component{
     }
   }
 
+  // turns msSince1970 to Date string
+  formatDate(msSince1970){
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const date = new Date(parseInt(msSince1970));
+    return date.getDate() + ' ' + months[date.getMonth()];
+  }
+
   componentDidMount(){
     if(this.props.editing){
       document.getElementById('edit').focus();
@@ -56,6 +63,7 @@ export default class TodoItem extends React.Component{
   }
 
   render(){
+
     return(
       <div className="todo">
         <div className="todo-body">
@@ -93,6 +101,7 @@ export default class TodoItem extends React.Component{
                 onMouseOut={()=>{this.setState({displayEditButton:false})}}
               >
                 {this.props.name}
+                {this.props.dueDate ? <span className="dueDate">({this.formatDate(this.props.dueDate)})</span> : null}
               </span>
             }
 

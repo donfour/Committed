@@ -75,6 +75,7 @@ export default class TodoList extends React.Component{
                 return(<TodoItem
                   key={item.id}
                   name={item.name}
+                  dueDate={item.dueDate}
                   daysOfWeek={item.daysOfWeek}
                   completed={item.completed}
                   toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}
@@ -108,6 +109,7 @@ export default class TodoList extends React.Component{
 
                                 <TodoItem
                                   name={item.name}
+                                  dueDate={item.dueDate}
                                   daysOfWeek={item.daysOfWeek}
                                   completed={item.completed}
                                   toggleTaskCompletion={()=>{this.props.toggleTaskCompletion(item.id)}}

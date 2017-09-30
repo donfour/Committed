@@ -204,25 +204,31 @@ class App extends Component {
 
   handleCloseCalendar(){
     this.setState({
-      showCalendar: false
+      showCalendar: false,
+      calendarModalForTaskId: -1
     })
   }
 
-  selectDueDate(taskId, dueDate){
+  selectDueDate(dueDate){
     let newTodoList = this.state.todos;
     for(var i=0; i<newTodoList.length; i++){
-      if(newTodoList[i].id===taskId){
-        newTodoList[i].dueDate = dueDate;
+      if(newTodoList[i].id === this.state.calendarModalForTaskId){
+        if(!dueDate){
+          newTodoList[i].dueDate = null;
+        } else {
+          newTodoList[i].dueDate = String(dueDate.getTime());
+        }
         break;
       }
     }
     this.updateTaskList(newTodoList);
+    this.handleCloseCalendar();
   }
 
   render() {
     return (
       <div className="App">
-        <h1>{this.state.calendarModalForTaskId}</h1>
+        <h1>Debug calendarModalForTaskId: {this.state.calendarModalForTaskId}</h1>
         <button
           className="toggle-showall-button"
           onClick={this.toggleShowAll.bind(this)}
@@ -242,6 +248,7 @@ class App extends Component {
           handleOpenCalendar={this.handleOpenCalendar.bind(this)}
           handleCloseCalendar={this.handleCloseCalendar.bind(this)}
           showCalendar={this.state.showCalendar}
+          selectDueDate={this.selectDueDate.bind(this)}
         />
 
         <GithubIcon/>

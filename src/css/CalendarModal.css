@@ -21,16 +21,15 @@
   right: 0px;
   bottom: 0px;
   background-color: rgba(0,0,0,0.3);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 /* React DayPicker */
 .DayPicker{
   background-color: white;
+}
+
+.DayPicker *:focus{
+  outline: 0;
 }
 
 .Overlay{
@@ -39,4 +38,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.remove-duedate-button{
+  text-transform: uppercase;
+  border: 2px white solid;
+  margin-top: 5px;
+  color: white;
+  letter-spacing: 2px;
+  width: 287px;
+  height: 22px;
+  transition: all 0.3s;
+}
+
+.remove-duedate-button:hover{
+  border-color: darkgray;
+  color: darkgray;
+  cursor: pointer;
+}
+
+.remove-duedate-button:active{
+  border-color: gray;
+  color: gray;
+  transition: none;
+}
+
+.remove-duedate-button:focus{
+  outline: none;
 }
