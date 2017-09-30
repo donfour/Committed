@@ -4,6 +4,8 @@ import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
 
+const MODES = ['SHOW ALL', 'SHOW TODAY', 'SHOW DUEDATES'];
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -31,7 +33,7 @@ class App extends Component {
         todos[i].render = true;
       }
       if(isRepeating){
-        if(todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){
+        if(todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){ //???
           todos[i].completed = false;
         }
         if(todos[i].daysOfWeek[timeNow.getDay()]){
@@ -118,14 +120,14 @@ class App extends Component {
     this.updateTaskList(newTodoList);
   }
 
-  deleteAllTask(){
-    localStorage.clear();
-    this.setState({
-      counter: 0,
-      todos: [],
-      editing: false
-    })
-  }
+  // deleteAllTask(){
+  //   localStorage.clear();
+  //   this.setState({
+  //     counter: 0,
+  //     todos: [],
+  //     editing: false
+  //   })
+  // }
 
   startEditMode(taskId){
     this.setState({
@@ -228,7 +230,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Debug calendarModalForTaskId: {this.state.calendarModalForTaskId}</h1>
+
         <button
           className="toggle-showall-button"
           onClick={this.toggleShowAll.bind(this)}
