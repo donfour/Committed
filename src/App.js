@@ -27,6 +27,7 @@ class App extends Component {
         }
       }
       if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== timeNow.toDateString()){
+        console.log('ran here');
         todos.splice(i,1);
         i--;
         continue;
@@ -45,6 +46,7 @@ class App extends Component {
       calendarModalForTaskId: 0,
       showCalendar: false
     }
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 
   createNewTask(taskName){
