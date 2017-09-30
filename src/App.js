@@ -33,9 +33,6 @@ class App extends Component {
         todos[i].render = true;
       }
       if(isRepeating){
-        if(todos[i].completed && todos[i].dayCompleted !== 'Mon Sep 11 2017'){ //???
-          todos[i].completed = false;
-        }
         if(todos[i].daysOfWeek[timeNow.getDay()]){
           todos[i].render = true;
         } else {
@@ -157,6 +154,44 @@ class App extends Component {
     }
     this.updateTaskList(newTodoList);
   }
+
+  // toggleShowAll(){
+  //   var todos = this.state.todos;
+  //
+  //   if(this.state.showAll){
+  //     var timeNow = new Date();
+  //     // remove completed one-time todos
+  //     for(var i=0; i<todos.length; i++){
+  //       // check if the todo is repeating, i.e. one-time
+  //       var isRepeating = false;
+  //       for(var j=0; j<todos[i].daysOfWeek.length; j++){
+  //         if(todos[i].daysOfWeek[j]){
+  //           isRepeating = true;
+  //           break;
+  //         }
+  //       }
+  //       if(isRepeating){
+  //         if(todos[i].daysOfWeek[timeNow.getDay()]){
+  //           todos[i].render = true;
+  //         } else {
+  //           todos[i].render = false;
+  //         }
+  //       }
+  //     }
+  //     this.setState({
+  //       showAll: false,
+  //       todos
+  //     })
+  //   } else {
+  //     for(var i=0; i<todos.length; i++){
+  //       todos[i].render = true;
+  //     }
+  //     this.setState({
+  //       showAll: true,
+  //       todos
+  //     })
+  //   }
+  // }
 
   toggleShowAll(){
     var todos = this.state.todos;
