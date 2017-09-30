@@ -4,7 +4,7 @@ export default class GithubIcon extends React.Component{
   render(){
     return(
       <div className="github-icon-container">
-        <a href="https://github.com/donfour/Committed" target="_blank">
+        <a href="https://github.com/donfour/Committed" target="_blank" rel="noopener noreferrer">
           <svg width="100%" height="100%" viewBox="0 0 438.549 438.549">
             <g>
             	<path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365

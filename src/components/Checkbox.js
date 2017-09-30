@@ -18,7 +18,7 @@ export default class Checkbox extends React.Component{
         }, 0)
       }
     } else {
-      for(var i=0; i<205; i++){
+      for(var j=0; j<205; j++){
         setTimeout(()=>{
           self.setState({
             strokeDashoffset: this.state.strokeDashoffset + 1

@@ -4,7 +4,7 @@ import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
 
-const MODES = ['SHOW ALL', 'SHOW TODAY', 'SHOW DUEDATES'];
+// const MODES = ['SHOW ALL', 'SHOW TODAY', 'SHOW DUEDATES'];
 
 class App extends Component {
   constructor(props){
@@ -15,6 +15,7 @@ class App extends Component {
     const counter = localStorage.getItem('counter') || 0;
 
     var timeNow = new Date();
+    console.log('timeNow.toDateString()', timeNow.toDateString());
     // remove completed one-time todos
     for(var i=0; i<todos.length; i++){
       // check if the todo is repeating, i.e. one-time
@@ -28,21 +29,21 @@ class App extends Component {
       if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== timeNow.toDateString()){
         todos.splice(i,1);
         i--;
+        continue;
       }
       if(!isRepeating && !todos[i].completed){
         todos[i].render = true;
       }
       if(isRepeating){
-        if(todos[i].daysOfWeek[timeNow.getDay()]){
-          todos[i].render = true;
-        } else {
-          todos[i].render = false;
-        }
+        todos[i].render = true;
       }
     }
     this.state = {
       counter,
-      todos
+      todos,
+      displayMode: 'SHOW ALL',
+      calendarModalForTaskId: 0,
+      showCalendar: false
     }
   }
 
@@ -64,14 +65,10 @@ class App extends Component {
 
     // save results
     localStorage.setItem('todos', JSON.stringify(newTodoList));
-    localStorage.setItem('counter', parseInt(this.state.counter) + 1);
+    localStorage.setItem('counter', parseInt(this.state.counter, 10) + 1);
     this.setState({
-      counter: parseInt(this.state.counter) + 1,
-      todos: newTodoList,
-      showAll: false,
-      showCalendar: false,
-      focused: false,
-      calendarModalForTaskId: 0
+      counter: parseInt(this.state.counter, 10) + 1,
+      todos: newTodoList
     })
   }
 
@@ -155,79 +152,53 @@ class App extends Component {
     this.updateTaskList(newTodoList);
   }
 
-  // toggleShowAll(){
-  //   var todos = this.state.todos;
-  //
-  //   if(this.state.showAll){
-  //     var timeNow = new Date();
-  //     // remove completed one-time todos
-  //     for(var i=0; i<todos.length; i++){
-  //       // check if the todo is repeating, i.e. one-time
-  //       var isRepeating = false;
-  //       for(var j=0; j<todos[i].daysOfWeek.length; j++){
-  //         if(todos[i].daysOfWeek[j]){
-  //           isRepeating = true;
-  //           break;
-  //         }
-  //       }
-  //       if(isRepeating){
-  //         if(todos[i].daysOfWeek[timeNow.getDay()]){
-  //           todos[i].render = true;
-  //         } else {
-  //           todos[i].render = false;
-  //         }
-  //       }
-  //     }
-  //     this.setState({
-  //       showAll: false,
-  //       todos
-  //     })
-  //   } else {
-  //     for(var i=0; i<todos.length; i++){
-  //       todos[i].render = true;
-  //     }
-  //     this.setState({
-  //       showAll: true,
-  //       todos
-  //     })
-  //   }
-  // }
-
   toggleShowAll(){
     var todos = this.state.todos;
 
-    if(this.state.showAll){
-      var timeNow = new Date();
-      // remove completed one-time todos
-      for(var i=0; i<todos.length; i++){
-        // check if the todo is repeating, i.e. one-time
-        var isRepeating = false;
-        for(var j=0; j<todos[i].daysOfWeek.length; j++){
-          if(todos[i].daysOfWeek[j]){
-            isRepeating = true;
-            break;
-          }
-        }
-        if(isRepeating){
+    switch(this.state.displayMode){
+      case 'SHOW ALL': // switch to SHOW TODAY
+        const timeNow = new Date();
+        for(var i=0; i<todos.length; i++){
           if(todos[i].daysOfWeek[timeNow.getDay()]){
             todos[i].render = true;
           } else {
             todos[i].render = false;
           }
+
         }
-      }
-      this.setState({
-        showAll: false,
-        todos
-      })
-    } else {
-      for(var i=0; i<todos.length; i++){
-        todos[i].render = true;
-      }
-      this.setState({
-        showAll: true,
-        todos
-      })
+        this.setState({
+          displayMode: 'SHOW TODAY',
+          todos
+        })
+      break;
+
+      case 'SHOW TODAY': // switch to SHOW DUEDATES
+        for(var i=0; i<todos.length; i++){
+          if(todos[i].dueDate){
+            todos[i].render = true;
+          } else {
+            todos[i].render = false;
+          }
+
+        }
+        this.setState({
+          displayMode: 'SHOW DUEDATES',
+          todos
+        })
+      break;
+
+      case 'SHOW DUEDATES': // switch to SHOW ALL
+        for(var i=0; i<todos.length; i++){
+          todos[i].render = true;
+        }
+        this.setState({
+          displayMode: 'SHOW ALL',
+          todos
+        })
+      break;
+
+      default:
+      break;
     }
   }
 
@@ -270,11 +241,11 @@ class App extends Component {
           className="toggle-showall-button"
           onClick={this.toggleShowAll.bind(this)}
         >
-          {this.state.showAll ? 'show all' : 'show today'}
+          {this.state.displayMode}
         </button>
 
         <div className="fox-icon-container">
-          <a href="https://donfour.github.io/donovanso/" target="_blank">
+          <a href="https://donfour.github.io/donovanso/" target="_blank" rel="noopener noreferrer">
             <svg width="100%" height="100%" viewBox="0 0 200 200">
               <path className="fox" d="M100,192.8c-24.2-47.9-75.3-71.2-75.3-71.2V15.2c0,0,46.8,4.5,46.8,42.2h57c0-37.6,46.8-42.2,46.8-42.2v106.5 C175.3,121.6,124.2,145,100,192.8z"/>
             </svg>

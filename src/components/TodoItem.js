@@ -52,7 +52,7 @@ export default class TodoItem extends React.Component{
   // turns msSince1970 to Date string
   formatDate(msSince1970){
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const date = new Date(parseInt(msSince1970));
+    const date = new Date(parseInt(msSince1970, 10));
     return date.getDate() + ' ' + months[date.getMonth()];
   }
 
