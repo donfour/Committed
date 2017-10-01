@@ -69,6 +69,12 @@ input#edit:focus{
   align-items: center;
 }
 
+span.dueDate{
+  color: salmon;
+  font-size: 17px;
+  margin-left: 5px;
+}
+
 @media (max-width: 500px) {
   .todo-content{
     font-size: 15px;
@@ -76,10 +82,7 @@ input#edit:focus{
   .todo-checkbox{
     padding-top: 20px
   }
-}
-
-span.dueDate{
-  color: salmon;
-  font-size: 17px;
-  margin-left: 5px;
+  span.dueDate{
+    font-size: 13px;
+  }
 }

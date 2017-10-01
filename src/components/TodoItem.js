@@ -87,6 +87,11 @@ export default class TodoItem extends React.Component{
                 onChange={this.handleChange.bind(this)}
                 onClick={this.handleInputClick.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
+                onKeyDown={(e)=>{
+                  if(e.keyCode === 13){
+                    document.getElementById('edit').blur();
+                  }
+                }}
               ></input>
               :
               <span
