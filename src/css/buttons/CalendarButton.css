@@ -4,12 +4,6 @@
   padding-top: 6px;
   margin: 0 10px;
 }
-
-.calendar-button #calendar{
-  fill: lightgray;
-}
-
 .calendar-button:hover #calendar{
-  fill: gray;
   cursor: pointer;
 }

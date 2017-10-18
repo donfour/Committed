@@ -1,37 +1,67 @@
-/* Default theme */
-
+/* Theme 1: Default theme */
 .calendar-button #calendar{
   fill: lightgray;
 }
-
 .calendar-button:hover #calendar{
   fill: gray;
 }
-
 .delete-button:hover .lib, .delete-button:hover .can{
   background-color: gray;
 }
-
 .delete-button span.lib {
   background-color: lightgray;
 }
-
 .delete-button span.can {
   background-color: lightgray;
 }
-
 .toggle-showall-button{
   border: 2px lightgray solid;
   color: lightgray;
   background-color: white;
 }
-
 .toggle-showall-button:hover{
   border-color: darkgray;
   color: darkgray;
 }
-
 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
+}
+.fox-icon-container:hover .fox{
+  fill: #EFB561;
+}
+.fox{
+  fill: lightgray;
+}
+.github-icon-container svg{
+  fill: lightgray;
+}
+.github-icon-container:hover svg{
+  fill: gray;
+}
+.initial-text{
+  color: darkgray;
+}
+.Modal {
+  background-color: rgba(0,0,0,0.3);
+}
+.DayPicker{
+  background-color: white;
+}
+.remove-duedate-button{
+  border: 2px white solid;
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+.remove-duedate-button:hover{
+  border-color: gray;
+  color: gray;
+}
+.remove-duedate-button:active{
+  border-color: gray;
+  color: gray;
+}
+#checkbox{
+  border: 2px solid black;
+  background-color: white;
 }

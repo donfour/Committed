@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './css/App.css';
+import './css/ColorThemes.css';
 import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
+
 
 // const MODES = ['SHOW ALL', 'SHOW TODAY', 'SHOW DUEDATES'];
 
