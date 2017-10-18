@@ -14,15 +14,10 @@
 .create-todo{
   width: 100%;
   border: none;
-  border-bottom: 2px solid #4B4B4B;
   font-size: 36px;
   letter-spacing: 1px;
   margin-top: 200px;
   padding-left: 5px;
-}
-
-.create-todo::-webkit-input-placeholder {
-  color: lightgray;
 }
 
 .create-todo:focus{

@@ -61,7 +61,32 @@
   border-color: gray;
   color: gray;
 }
+/*Checkbox.css*/
 #checkbox{
   border: 2px solid black;
   background-color: white;
+}
+.st0{
+    fill:#FFFFFF;
+    stroke:#000000;
+}
+/*TodoItem.css*/
+.todo{
+  border-bottom: 1px solid #DDDDDD;
+}
+.edit-button svg{
+  fill: lightgray;
+}
+input#edit{
+  border-bottom: 1px solid black;
+}
+span.dueDate{
+  color: salmon;
+}
+/*TodoList.css*/
+.create-todo{
+  border-bottom: 2px solid #4B4B4B;
+}
+.create-todo::-webkit-input-placeholder {
+  color: lightgray;
 }
