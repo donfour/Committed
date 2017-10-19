@@ -3,7 +3,7 @@ import React from 'react';
 export default class GithubIcon extends React.Component{
   render(){
     return(
-      <div className="github-icon-container">
+      <div className={this.props.themeNumber + " github-icon-container"}>
         <a href="https://github.com/donfour/Committed" target="_blank" rel="noopener noreferrer">
           <svg width="100%" height="100%" viewBox="0 0 438.549 438.549">
             <g>

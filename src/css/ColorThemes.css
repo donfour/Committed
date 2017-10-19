@@ -1,92 +1,100 @@
-/* Theme 1: Default theme */
-.calendar-button #calendar{
-  fill: lightgray;
-}
-.calendar-button:hover #calendar{
-  fill: gray;
-}
-.delete-button:hover .lib, .delete-button:hover .can{
-  background-color: gray;
-}
-.delete-button span.lib {
-  background-color: lightgray;
-}
-.delete-button span.can {
-  background-color: lightgray;
-}
-.toggle-showall-button{
-  border: 2px lightgray solid;
-  color: lightgray;
+/* Theme 0: Default theme */
+.theme-0.App{
   background-color: white;
 }
-.toggle-showall-button:hover{
+/*CalendarButton.css*/
+.theme-0.calendar-button #calendar{
+  fill: lightgray;
+}
+.theme-0.calendar-button:hover #calendar{
+  fill: gray;
+}
+/*DeleteButton.css*/
+.theme-0.delete-button:hover .lib, .theme-0.delete-button:hover .can{
+  background-color: gray;
+}
+.theme-0.delete-button span.lib {
+  background-color: lightgray;
+}
+.theme-0.delete-button span.can {
+  background-color: lightgray;
+}
+/*App.css*/
+.theme-0.toggle-showall-button{
+  border: 2px lightgray solid;
+  color: lightgray;
+  background-color: rgba(0,0,0,0);
+}
+.theme-0.toggle-showall-button:hover{
   border-color: darkgray;
   color: darkgray;
 }
-.toggle-showall-button:active{
+.theme-0.toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.fox-icon-container:hover .fox{
+.theme-0.fox-icon-container:hover .fox{
   fill: #EFB561;
 }
-.fox{
+.theme-0.fox{
   fill: lightgray;
 }
-.github-icon-container svg{
+.theme-0.github-icon-container svg{
   fill: lightgray;
 }
-.github-icon-container:hover svg{
+.theme-0.github-icon-container:hover svg{
   fill: gray;
 }
-.initial-text{
+.theme-0.initial-text{
   color: darkgray;
 }
-.Modal {
+/*CalendarModal.css*/
+.Modal{
   background-color: rgba(0,0,0,0.3);
 }
-.DayPicker{
+.theme-0.DayPicker{
   background-color: white;
 }
-.remove-duedate-button{
+.theme-0.remove-duedate-button{
   border: 2px white solid;
   background-color: rgba(0,0,0,0);
   color: white;
 }
-.remove-duedate-button:hover{
+.theme-0.remove-duedate-button:hover{
   border-color: gray;
   color: gray;
 }
-.remove-duedate-button:active{
+.theme-0.remove-duedate-button:active{
   border-color: gray;
   color: gray;
 }
 /*Checkbox.css*/
-#checkbox{
+.theme-0#checkbox{
   border: 2px solid black;
-  background-color: white;
+  background-color: rgba(0,0,0,0);
 }
-.st0{
-    fill:#FFFFFF;
+.theme-0 .st0{
+    fill:rgba(0,0,0,0);
     stroke:#000000;
 }
 /*TodoItem.css*/
-.todo{
+.theme-0.todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.edit-button svg{
+.theme-0.edit-button svg{
   fill: lightgray;
 }
-input#edit{
+input#edit.theme-0{
   border-bottom: 1px solid black;
 }
-span.dueDate{
+span.dueDate.theme-0{
   color: salmon;
 }
 /*TodoList.css*/
-.create-todo{
+.theme-0.create-todo{
   border-bottom: 2px solid #4B4B4B;
+  background-color: rgba(0,0,0,0);
 }
-.create-todo::-webkit-input-placeholder {
+.theme-0.create-todo::-webkit-input-placeholder {
   color: lightgray;
 }

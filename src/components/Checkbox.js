@@ -43,6 +43,7 @@ export default class Checkbox extends React.Component{
   render(){
     return(
       <div id="checkbox"
+        className={this.props.themeNumber}
         onClick={this.handleClick.bind(this)}
       >
         <svg id="tick"  width="100%" height="100%" viewBox="0 0 200 200">

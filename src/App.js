@@ -5,9 +5,6 @@ import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
 
-
-// const MODES = ['SHOW ALL', 'SHOW TODAY', 'SHOW DUEDATES'];
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -15,6 +12,7 @@ class App extends Component {
     // initialize state
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;
+    const themeNumber = localStorage.getItem('themeNumber') || "theme-0";
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
@@ -29,7 +27,6 @@ class App extends Component {
         }
       }
       if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== timeNow.toDateString()){
-        console.log('ran here');
         todos.splice(i,1);
         i--;
         continue;
@@ -46,7 +43,8 @@ class App extends Component {
       todos,
       displayMode: 'SHOW ALL',
       calendarModalForTaskId: 0,
-      showCalendar: false
+      showCalendar: false,
+      themeNumber
     }
     localStorage.setItem('todos', JSON.stringify(todos));
   }
@@ -239,19 +237,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-
+      <div className={this.state.themeNumber + " App"}>
         <button
-          className="toggle-showall-button"
+          className={this.state.themeNumber + " toggle-showall-button"}
           onClick={this.toggleShowAll.bind(this)}
         >
           {this.state.displayMode}
         </button>
 
-        <div className="fox-icon-container">
+        <div className={this.state.themeNumber + " fox-icon-container"}>
           <a href="https://donfour.github.io/donovanso/" target="_blank" rel="noopener noreferrer">
             <svg width="100%" height="100%" viewBox="0 0 200 200">
-              <path className="fox" d="M100,192.8c-24.2-47.9-75.3-71.2-75.3-71.2V15.2c0,0,46.8,4.5,46.8,42.2h57c0-37.6,46.8-42.2,46.8-42.2v106.5 C175.3,121.6,124.2,145,100,192.8z"/>
+              <path className={this.state.themeNumber + " fox"} d="M100,192.8c-24.2-47.9-75.3-71.2-75.3-71.2V15.2c0,0,46.8,4.5,46.8,42.2h57c0-37.6,46.8-42.2,46.8-42.2v106.5 C175.3,121.6,124.2,145,100,192.8z"/>
             </svg>
           </a>
         </div>
@@ -261,9 +258,12 @@ class App extends Component {
           handleCloseCalendar={this.handleCloseCalendar.bind(this)}
           showCalendar={this.state.showCalendar}
           selectDueDate={this.selectDueDate.bind(this)}
+          themeNumber={this.state.themeNumber}
         />
 
-        <GithubIcon/>
+        <GithubIcon
+          themeNumber={this.state.themeNumber}
+        />
 
         <TodoList
           editing={this.state.editing}
@@ -276,6 +276,7 @@ class App extends Component {
           startEditMode={this.startEditMode.bind(this)}
           endEditMode={this.endEditMode.bind(this)}
           handleOpenCalendar={this.handleOpenCalendar.bind(this)}
+          themeNumber={this.state.themeNumber}
         />
       </div>
     );
