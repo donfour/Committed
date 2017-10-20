@@ -1,5 +1,6 @@
 .todolist-container{
   width: 700px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 500px) {
