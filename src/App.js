@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/App.css';
 import './css/ColorThemes.css';
 import TodoList from './components/TodoList';
-import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
 import SideMenu from './components/SideMenu';
 import Sidebar from 'react-sidebar';
@@ -246,7 +245,9 @@ class App extends Component {
     return (
       <Sidebar
         sidebar={
-          <SideMenu />
+          <SideMenu
+            themeNumber={this.state.themeNumber}
+          />
         }
         docked={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen.bind(this)}
@@ -256,27 +257,15 @@ class App extends Component {
                  <button
                    className={this.state.themeNumber + " toggle-showall-button"}
                    onClick={this.toggleShowAll.bind(this)}
-                   >
-                     {this.state.displayMode}
-                   </button>
-
-                   <div className={this.state.themeNumber + " fox-icon-container"}>
-                     <a href="https://donfour.github.io/donovanso/" target="_blank" rel="noopener noreferrer">
-                     <svg width="100%" height="100%" viewBox="0 0 200 200">
-                       <path className={this.state.themeNumber + " fox"} d="M100,192.8c-24.2-47.9-75.3-71.2-75.3-71.2V15.2c0,0,46.8,4.5,46.8,42.2h57c0-37.6,46.8-42.2,46.8-42.2v106.5 C175.3,121.6,124.2,145,100,192.8z"/>
-                     </svg>
-                   </a>
-                 </div>
+                  >
+                   {this.state.displayMode}
+                 </button>
 
                  <CalendarModal
                    handleOpenCalendar={this.handleOpenCalendar.bind(this)}
                    handleCloseCalendar={this.handleCloseCalendar.bind(this)}
                    showCalendar={this.state.showCalendar}
                    selectDueDate={this.selectDueDate.bind(this)}
-                   themeNumber={this.state.themeNumber}
-                 />
-
-                 <GithubIcon
                    themeNumber={this.state.themeNumber}
                  />
 

@@ -1,0 +1,14 @@
+.fox-icon-container{
+  height: 30px;
+  width: 30px;
+}
+.fox-icon-container:hover .fox{
+  fill: #EFB561;
+  cursor: pointer;
+}
+.fox{
+  stroke: none;
+  stroke-miterlimit:10;
+  transition: all 0.3s;
+  fill: gray;
+}

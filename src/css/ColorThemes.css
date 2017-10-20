@@ -36,18 +36,6 @@
   border-color: black;
   color: black;
 }
-.theme-0.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-0.fox{
-  fill: gray;
-}
-.theme-0.github-icon-container svg{
-  fill: gray;
-}
-.theme-0.github-icon-container:hover svg{
-  fill: darkgray;
-}
 .theme-0.initial-text{
   color: darkgray;
 }
@@ -147,18 +135,6 @@ span.dueDate.theme-0{
   border-color: gray;
   color: gray;
 }
-.theme-1.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-1.fox{
-  fill: #bfaf70;
-}
-.theme-1.github-icon-container svg{
-  fill: #bfaf70;
-}
-.theme-1.github-icon-container:hover svg{
-  fill: white;
-}
 .theme-1.initial-text{
   color: white;
 }
@@ -257,18 +233,6 @@ span.dueDate.theme-1{
 .theme-2.toggle-showall-button:active{
   border-color: gray;
   color: gray;
-}
-.theme-2.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-2.fox{
-  fill: #243B6C;
-}
-.theme-2.github-icon-container svg{
-  fill: #243B6C;
-}
-.theme-2.github-icon-container:hover svg{
-  fill: darkgray;
 }
 .theme-2.initial-text{
   color: #243B6C;
@@ -371,18 +335,6 @@ span.dueDate.theme-2{
   border-color: gray;
   color: gray;
 }
-.theme-3.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-3.fox{
-  fill: white;
-}
-.theme-3.github-icon-container svg{
-  fill: white;
-}
-.theme-3.github-icon-container:hover svg{
-  fill: lightgray;
-}
 .theme-3.initial-text{
   color: white;
 }
@@ -483,18 +435,6 @@ span.dueDate.theme-3{
 .theme-4.toggle-showall-button:active{
   border-color: gray;
   color: gray;
-}
-.theme-4.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-4.fox{
-  fill: white;
-}
-.theme-4.github-icon-container svg{
-  fill: white;
-}
-.theme-4.github-icon-container:hover svg{
-  fill: lightgray;
 }
 .theme-4.initial-text{
   color: white;
@@ -597,18 +537,6 @@ span.dueDate.theme-4{
   border-color: gray;
   color: gray;
 }
-.theme-5.fox-icon-container:hover .fox{
-  fill: #EFB561;
-}
-.theme-5.fox{
-  fill: white;
-}
-.theme-5.github-icon-container svg{
-  fill: white;
-}
-.theme-5.github-icon-container:hover svg{
-  fill: lightgray;
-}
 .theme-5.initial-text{
   color: white;
 }
@@ -649,7 +577,7 @@ span.dueDate.theme-4{
   color: white;
 }
 .theme-5.todo-content.completed{
-  color: #83ff00;
+  color: lightgray;
 }
 input#edit.theme-5{
   color: white;

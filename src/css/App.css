@@ -37,36 +37,6 @@ html, body, #root, .App{
   outline: none;
 }
 
-.fox-icon-container{
-  height: 30px;
-  width: 30px;
-  position: fixed;
-  bottom: 10px;
-  right: 50px;
-}
-
-.fox-icon-container:hover .fox{
-  cursor: pointer;
-}
-
-.fox{
-  stroke: none;
-  stroke-miterlimit:10;
-  transition: all 0.3s;
-}
-
-.github-icon-container{
-  height: 30px;
-  width: 30px;
-  position: fixed;
-  bottom: 10px;
-  right: 5px;
-}
-
-.github-icon-container svg{
-  transition: all 0.3s;
-}
-
 .initial-text{
   padding-left: 5px;
 }
