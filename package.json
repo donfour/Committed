@@ -12,7 +12,8 @@
     "react-dom": "^15.6.1",
     "react-modal": "^2.3.2",
     "react-motion": "^0.5.1",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "react-sidebar": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
