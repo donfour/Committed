@@ -5,7 +5,6 @@ import '../css/TodoItem.css';
 import DayOfWeekList from './DayOfWeekList';
 import DeleteButton from './buttons/DeleteButton';
 import CalendarButton from './buttons/CalendarButton';
-import { FONT_COLOR, COMPLETED_FONT_COLOR } from '../constants/constants';
 
 export default class TodoItem extends React.Component{
   state = {
@@ -63,7 +62,10 @@ export default class TodoItem extends React.Component{
   }
 
   render(){
-
+    var todoContentClass = this.props.themeNumber + " todo-content";
+    if(this.props.completed){
+      todoContentClass += " completed";
+    }
     return(
       <div className={this.props.themeNumber + " todo"}>
         <div className="todo-body">
@@ -75,9 +77,8 @@ export default class TodoItem extends React.Component{
             />
           </div>
           <div
-            className="todo-content"
+            className={todoContentClass}
             onClick={()=>{this.toggleOpen()}}
-            style={this.props.completed ? {color: COMPLETED_FONT_COLOR} : {color: FONT_COLOR}}
           >
 
             {
@@ -130,6 +131,7 @@ export default class TodoItem extends React.Component{
             <DayOfWeekList
               daysOfWeek={this.props.daysOfWeek}
               toggleDayOfWeek={this.props.toggleDayOfWeek}
+              themeNumber={this.props.themeNumber}
             />
             <div className="todo-footer-buttons-container">
               <CalendarButton

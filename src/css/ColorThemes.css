@@ -84,6 +84,12 @@
 .theme-0.edit-button svg{
   fill: lightgray;
 }
+.theme-0.todo-content{
+  color: #4B4B4B;
+}
+.theme-0.todo-content.completed{
+  color: #CCCCCC;
+}
 input#edit.theme-0{
   border-bottom: 1px solid black;
 }
@@ -97,4 +103,122 @@ span.dueDate.theme-0{
 }
 .theme-0.create-todo::-webkit-input-placeholder {
   color: lightgray;
+}
+/*DayOfWeek*/
+.theme-0.underline{
+  color: #CCCCCC;
+}
+.theme-0.underline.completed{
+  color: #4B4B4B;
+}
+
+/* Theme 1: Default theme */
+.theme-1.App{
+  background-color: #353843;
+}
+/*CalendarButton.css*/
+.theme-1.calendar-button #calendar{
+  fill: lightgray;
+}
+.theme-1.calendar-button:hover #calendar{
+  fill: gray;
+}
+/*DeleteButton.css*/
+.theme-1.delete-button:hover .lib, .theme-1.delete-button:hover .can{
+  background-color: gray;
+}
+.theme-1.delete-button span.lib {
+  background-color: lightgray;
+}
+.theme-1.delete-button span.can {
+  background-color: lightgray;
+}
+/*App.css*/
+.theme-1.toggle-showall-button{
+  border: 2px lightgray solid;
+  color: lightgray;
+  background-color: rgba(0,0,0,0);
+}
+.theme-1.toggle-showall-button:hover{
+  border-color: darkgray;
+  color: darkgray;
+}
+.theme-1.toggle-showall-button:active{
+  border-color: gray;
+  color: gray;
+}
+.theme-1.fox-icon-container:hover .fox{
+  fill: #EFB561;
+}
+.theme-1.fox{
+  fill: lightgray;
+}
+.theme-1.github-icon-container svg{
+  fill: lightgray;
+}
+.theme-1.github-icon-container:hover svg{
+  fill: gray;
+}
+.theme-1.initial-text{
+  color: darkgray;
+}
+/*CalendarModal.css*/
+.theme-1.DayPicker{
+  background-color: white;
+}
+.theme-1.remove-duedate-button{
+  border: 2px white solid;
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+.theme-1.remove-duedate-button:hover{
+  border-color: gray;
+  color: gray;
+}
+.theme-1.remove-duedate-button:active{
+  border-color: gray;
+  color: gray;
+}
+/*Checkbox.css*/
+.theme-1#checkbox{
+  border: 2px solid black;
+  background-color: rgba(0,0,0,0);
+}
+.theme-1 .st0{
+    fill:rgba(0,0,0,0);
+    stroke:#000000;
+}
+/*TodoItem.css*/
+.theme-1.todo{
+  border-bottom: 1px solid #DDDDDD;
+}
+.theme-1.edit-button svg{
+  fill: lightgray;
+}
+.theme-1.todo-content{
+  color: #4B4B4B;
+}
+.theme-1.todo-content.completed{
+  color: #CCCCCC;
+}
+input#edit.theme-1{
+  border-bottom: 1px solid black;
+}
+span.dueDate.theme-1{
+  color: salmon;
+}
+/*TodoList.css*/
+.theme-1.create-todo{
+  border-bottom: 2px solid #4B4B4B;
+  background-color: rgba(0,0,0,0);
+}
+.theme-1.create-todo::-webkit-input-placeholder {
+  color: lightgray;
+}
+/*DayOfWeek*/
+.theme-1.underline{
+  color: #CCCCCC;
+}
+.theme-1.underline.completed{
+  color: #4B4B4B;
 }

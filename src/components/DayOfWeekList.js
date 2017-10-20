@@ -24,6 +24,7 @@ export default class DayOfWeekList extends React.Component{
               dayName={dayName}
               completed={day}
               toggleDayOfWeek={()=>{this.props.toggleDayOfWeek(i)}}
+              themeNumber={this.props.themeNumber}
             />
           );
         })}

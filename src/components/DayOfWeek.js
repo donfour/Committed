@@ -1,17 +1,19 @@
 import React from 'react';
 import '../css/DayOfWeek.css';
-import { FONT_COLOR, COMPLETED_FONT_COLOR } from '../constants/constants';
 
 export default class DayOfWeek extends React.Component{
   state = {
     onHover: false
   }
   render(){
+    var underlineClass = this.props.themeNumber + " underline";
+    if(this.props.completed || this.state.onHover){
+      underlineClass += " completed";
+    }
     return(
         <div
-          className="underline"
+          className={underlineClass}
           onClick={()=>{this.props.toggleDayOfWeek()}}
-          style={this.props.completed || this.state.onHover ? {color: FONT_COLOR} : {'color': COMPLETED_FONT_COLOR}}
           onMouseOver={()=>{this.setState({onHover: true})}}
           onMouseOut={()=>{this.setState({onHover: false})}}
         >
