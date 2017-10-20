@@ -461,14 +461,14 @@ span.dueDate.theme-3{
   fill: white;
 }
 .theme-4.calendar-button:hover #calendar{
-  fill: purple;
+  fill: darkgray;
 }
 /*DeleteButton.css*/
 .theme-4.delete-button span.lib, .theme-4.delete-button span.can{
   background-color: white;
 }
 .theme-4.delete-button:hover .lib, .theme-4.delete-button:hover .can{
-  background-color: purple;
+  background-color: darkgray;
 }
 /*App.css*/
 .theme-4.toggle-showall-button{
@@ -560,7 +560,7 @@ span.dueDate.theme-4{
   color: white;
 }
 .theme-4.underline.completed{
-  color: purple;
+  color: cyan;
 }
 
 /* Theme 4: Apple soda theme */
@@ -574,14 +574,14 @@ span.dueDate.theme-4{
   fill: white;
 }
 .theme-5.calendar-button:hover #calendar{
-  fill: #83ff00;
+  fill: lightgray;
 }
 /*DeleteButton.css*/
 .theme-5.delete-button span.lib, .theme-5.delete-button span.can{
   background-color: white;
 }
 .theme-5.delete-button:hover .lib, .theme-5.delete-button:hover .can{
-  background-color: #83ff00;
+  background-color: lightgray;
 }
 /*App.css*/
 .theme-5.toggle-showall-button{

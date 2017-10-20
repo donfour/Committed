@@ -12,7 +12,7 @@ class App extends Component {
     // initialize state
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;
-    const themeNumber = localStorage.getItem('themeNumber') || "theme-4";
+    const themeNumber = localStorage.getItem('themeNumber') || "theme-5";
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
