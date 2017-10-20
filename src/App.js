@@ -4,6 +4,7 @@ import './css/ColorThemes.css';
 import TodoList from './components/TodoList';
 import GithubIcon from './components/GithubIcon';
 import CalendarModal from './components/CalendarModal';
+import SideMenu from './components/SideMenu';
 import Sidebar from 'react-sidebar';
 
 class App extends Component {
@@ -242,10 +243,11 @@ class App extends Component {
   }
 
   render() {
-    var sidebarContent = <b>Sidebar content</b>;
     return (
       <Sidebar
-        sidebar={sidebarContent}
+        sidebar={
+          <SideMenu />
+        }
         docked={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen.bind(this)}
       >
