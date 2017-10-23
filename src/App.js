@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import $ from "jquery";
 import './css/App.css';
 import './css/ColorThemes.css';
 import TodoList from './components/TodoList';
 import CalendarModal from './components/CalendarModal';
 import SideMenu from './components/SideMenu';
+import BurgerButton from './components/buttons/BurgerButton';
 import Sidebar from 'react-sidebar';
+
 
 class App extends Component {
   constructor(props){
@@ -13,7 +16,7 @@ class App extends Component {
     // initialize state
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;
-    const themeNumber = localStorage.getItem('themeNumber') || "theme-5";
+    const themeNumber = localStorage.getItem('themeNumber') || "theme-0";
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
@@ -237,8 +240,29 @@ class App extends Component {
     this.handleCloseCalendar();
   }
 
-  onSetSidebarOpen(open) {
-    this.setState({sidebarOpen: open});
+  onSetSidebarOpen() {
+    // burger button credits to: https://codepen.io/keenode/pen/dPqdPd?editors=1010
+    var clickDelay = 500,
+        clickDelayTimer = null;
+
+    if(clickDelayTimer === null) {
+
+      var $burger = $('.burger-click-region');
+      $burger.toggleClass('active');
+      $burger.parent().toggleClass('is-open');
+
+      if(!$burger.hasClass('active')) {
+        $burger.addClass('closing');
+      }
+
+      clickDelayTimer = setTimeout(function () {
+        $burger.removeClass('closing');
+        clearTimeout(clickDelayTimer);
+        clickDelayTimer = null;
+      }, clickDelay);
+    }
+
+    this.setState({sidebarOpen: !this.state.sidebarOpen})
   }
 
   render() {
@@ -247,19 +271,21 @@ class App extends Component {
         sidebar={
           <SideMenu
             themeNumber={this.state.themeNumber}
+            toggleShowAll={this.toggleShowAll.bind(this)}
+            displayMode={this.state.displayMode}
           />
         }
         docked={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen.bind(this)}
       >
                <div className={this.state.themeNumber + " App"}>
-                 <button onClick={()=>{this.setState({sidebarOpen: !this.state.sidebarOpen})}}>Test</button>
-                 <button
-                   className={this.state.themeNumber + " toggle-showall-button"}
-                   onClick={this.toggleShowAll.bind(this)}
-                  >
-                   {this.state.displayMode}
-                 </button>
+
+                 <div className="button-containers">
+                   {/* burger button */}
+                   <BurgerButton
+                     onSetSidebarOpen={this.onSetSidebarOpen.bind(this)}
+                   />
+                 </div>
+
 
                  <CalendarModal
                    handleOpenCalendar={this.handleOpenCalendar.bind(this)}

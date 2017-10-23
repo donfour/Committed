@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html, body, #root, .App{
   height: 100%;
@@ -15,26 +15,9 @@ html, body, #root, .App{
   overflow: scroll;
 }
 
-.toggle-showall-button{
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  height: 22px;
-  transition: all 0.3s;
-}
-
-.toggle-showall-button:hover{
-  cursor: pointer;
-}
-
-.toggle-showall-button:active{
-  transition: none;
-}
-
-.toggle-showall-button:focus{
-  outline: none;
+div.button-containers{
+  display: flex;
+  width: 100%;
 }
 
 .initial-text{

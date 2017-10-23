@@ -1,0 +1,25 @@
+.SideMenu{
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-showall-button{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 22px;
+  transition: all 0.3s;
+  margin-top: 9px;
+}
+
+.toggle-showall-button:hover{
+  cursor: pointer;
+}
+
+.toggle-showall-button:active{
+  transition: none;
+}
+
+.toggle-showall-button:focus{
+  outline: none;
+}
