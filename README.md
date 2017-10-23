@@ -37,3 +37,11 @@ Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
 * Frontend: React
 * The collapsable menu in each todo: react-collapse
 * Drag-and-drop functionality: react-beautiful-dnd
+
+## Wip
+* Data sync across Chrome on different machines
+* Theme selection
+* Goal completion streak
+
+## Issues
+* Too lazy to refactor everything and use Redux
