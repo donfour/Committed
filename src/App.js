@@ -16,7 +16,7 @@ class App extends Component {
     // initialize state
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;
-    const themeNumber = localStorage.getItem('themeNumber') || "theme-4";
+    const themeNumber = localStorage.getItem('themeNumber') || "theme-0";
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
@@ -334,7 +334,6 @@ class App extends Component {
       <Sidebar
         sidebar={
           <SideMenu
-            themeNumber={this.state.themeNumber}
             toggleShowAll={this.toggleShowAll.bind(this)}
             displayMode={this.state.displayMode}
             handleSelectTheme={this.handleSelectTheme.bind(this)}
@@ -346,7 +345,7 @@ class App extends Component {
                <div className={this.state.themeNumber + " App"}>
 
                  <button
-                   className={this.state.themeNumber + " toggle-showall-button"}
+                   className="toggle-showall-button"
                    onClick={this.toggleShowAll.bind(this)}
                  >
                    {this.state.displayMode}
@@ -356,7 +355,6 @@ class App extends Component {
                    {/* burger button */}
                    <BurgerButton
                      onSetSidebarOpen={this.onSetSidebarOpen.bind(this)}
-                     themeNumber={this.state.themeNumber}
                    />
                  </div>
 
@@ -366,7 +364,6 @@ class App extends Component {
                    handleCloseCalendar={this.handleCloseCalendar.bind(this)}
                    showCalendar={this.state.showCalendar}
                    selectDueDate={this.selectDueDate.bind(this)}
-                   themeNumber={this.state.themeNumber}
                  />
 
                  <TodoList
@@ -380,7 +377,6 @@ class App extends Component {
                    startEditMode={this.startEditMode.bind(this)}
                    endEditMode={this.endEditMode.bind(this)}
                    handleOpenCalendar={this.handleOpenCalendar.bind(this)}
-                   themeNumber={this.state.themeNumber}
                  />
                </div>
       </Sidebar>

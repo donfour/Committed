@@ -62,18 +62,17 @@ export default class TodoItem extends React.Component{
   }
 
   render(){
-    var todoContentClass = this.props.themeNumber + " todo-content";
+    var todoContentClass = "todo-content";
     if(this.props.completed){
       todoContentClass += " completed";
     }
     return(
-      <div className={this.props.themeNumber + " todo"}>
+      <div className="todo">
         <div className="todo-body">
           <div className="todo-checkbox">
             <Checkbox
               toggleTaskCompletion={this.props.toggleTaskCompletion}
               completed={this.props.completed}
-              themeNumber={this.props.themeNumber}
             />
           </div>
           <div
@@ -85,7 +84,6 @@ export default class TodoItem extends React.Component{
               this.props.editing ?
               <input
                 id="edit"
-                className={this.props.themeNumber}
                 value={this.state.value}
                 onChange={this.handleChange.bind(this)}
                 onClick={this.handleInputClick.bind(this)}
@@ -109,12 +107,12 @@ export default class TodoItem extends React.Component{
                 onMouseOut={()=>{this.setState({displayEditButton:false})}}
               >
                 {this.props.name}
-                {this.props.dueDate ? <span className={this.props.themeNumber + " dueDate"}>({this.formatDate(this.props.dueDate)})</span> : null}
+                {this.props.dueDate ? <span className="dueDate">({this.formatDate(this.props.dueDate)})</span> : null}
               </span>
             }
 
             <div
-              className={this.props.themeNumber + " edit-button"}
+              className="edit-button"
               style={ this.state.displayEditButton ? null : { display: 'none' } }
             >
               <svg width="100%" height="100%" viewBox="0 0 528.899 528.899">
@@ -131,16 +129,13 @@ export default class TodoItem extends React.Component{
             <DayOfWeekList
               daysOfWeek={this.props.daysOfWeek}
               toggleDayOfWeek={this.props.toggleDayOfWeek}
-              themeNumber={this.props.themeNumber}
             />
             <div className="todo-footer-buttons-container">
               <CalendarButton
                 handleOpenCalendar={this.props.handleOpenCalendar}
-                themeNumber={this.props.themeNumber}
               />
               <DeleteButton
                 deleteTask={this.props.deleteTask}
-                themeNumber={this.props.themeNumber}
               />
             </div>
           </div>

@@ -2,104 +2,88 @@
 .theme-0.App{
   background-color: white;
 }
-.theme-0 .burger-menu-piece{
+.theme-0  .burger-menu-piece{
   border-top: 3px solid gray;
 }
 /*CalendarButton.css*/
-.theme-0.calendar-button #calendar{
+.theme-0 .calendar-button #calendar{
   fill: lightgray;
 }
-.theme-0.calendar-button:hover #calendar{
+.theme-0 .calendar-button:hover #calendar{
   fill: gray;
 }
 /*DeleteButton.css*/
-.theme-0.delete-button:hover .lib, .theme-0.delete-button:hover .can{
+.theme-0 .delete-button:hover .lib, .theme-0 .delete-button:hover .can{
   background-color: gray;
 }
-.theme-0.delete-button span.lib {
+.theme-0 .delete-button span.lib {
   background-color: lightgray;
 }
-.theme-0.delete-button span.can {
+.theme-0 .delete-button span.can {
   background-color: lightgray;
 }
 /*App.css*/
-.theme-0.toggle-showall-button{
+.theme-0 .toggle-showall-button{
   border: 2px gray solid;
   color: gray;
   background-color: rgba(0,0,0,0);
 }
-.theme-0.toggle-showall-button:hover{
+.theme-0 .toggle-showall-button:hover{
   border-color: darkgray;
   color: darkgray;
 }
-.theme-0.toggle-showall-button:active{
+.theme-0 .toggle-showall-button:active{
   border-color: black;
   color: black;
 }
-.theme-0.initial-text{
+.theme-0 .initial-text{
   color: darkgray;
 }
 /*CalendarModal.css*/
 .Modal{
   background-color: rgba(0,0,0,0.3);
 }
-.theme-0.DayPicker{
-  background-color: white;
-}
-.theme-0.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-0.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-0.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
-}
 /*Checkbox.css*/
-.theme-0#checkbox{
+.theme-0 #checkbox{
   border: 2px solid black;
   background-color: rgba(0,0,0,0);
 }
-.theme-0 .st0{
+.theme-0  .st0{
     fill:rgba(0,0,0,0);
     stroke:#000000;
 }
 /*TodoItem.css*/
-.theme-0.todo{
+.theme-0 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-0.edit-button svg{
+.theme-0 .edit-button svg{
   fill: lightgray;
 }
-.theme-0.todo-content{
+.theme-0 .todo-content{
   color: #4B4B4B;
 }
-.theme-0.todo-content.completed{
+.theme-0 .todo-content.completed{
   color: #CCCCCC;
 }
-input#edit.theme-0{
+.theme-0 input#edit{
   border-bottom: 1px solid black;
 }
-span.dueDate.theme-0{
+.theme-0 span.dueDate{
   color: salmon;
 }
 /*TodoList.css*/
-.theme-0.create-todo{
+.theme-0 .create-todo{
   border-bottom: 2px solid #4B4B4B;
   background-color: rgba(0,0,0,0);
 }
-.theme-0.create-todo::-webkit-input-placeholder {
+.theme-0 .create-todo::-webkit-input-placeholder {
   color: lightgray;
 }
 /*DayOfWeek*/
-.theme-0.underline{
+.theme-0 .underline{
   color: #CCCCCC;
 }
-.theme-0.underline.completed{
+.theme-0 .underline.completed{
   color: #4B4B4B;
 }
 
@@ -107,101 +91,84 @@ span.dueDate.theme-0{
 .theme-1.App{
   background-color: #142F43;
 }
-.theme-1 .burger-menu-piece{
+.theme-1  .burger-menu-piece{
   border-top: 3px solid #EAD379;
 }
 /*CalendarButton.css*/
-.theme-1.calendar-button #calendar{
+.theme-1 .calendar-button #calendar{
   fill: white;
 }
-.theme-1.calendar-button:hover #calendar{
+.theme-1 .calendar-button:hover #calendar{
   fill: darkgray;
 }
 /*DeleteButton.css*/
-.theme-1.delete-button span.lib, .theme-1.delete-button span.can{
+.theme-1 .delete-button span.lib, .theme-1 .delete-button span.can{
   background-color: white;
 }
-.theme-1.delete-button:hover .lib, .theme-1.delete-button:hover .can{
+.theme-1 .delete-button:hover .lib, .theme-1 .delete-button:hover .can{
   background-color: darkgray;
 }
 /*App.css*/
-.theme-1.toggle-showall-button{
+.theme-1 .toggle-showall-button{
   border: 2px #EAD379 solid;
   color: #EAD379;
   background-color: rgba(0,0,0,0);
 }
-.theme-1.toggle-showall-button:hover{
+.theme-1 .toggle-showall-button:hover{
   border-color: white;
   color: white;
 }
-.theme-1.toggle-showall-button:active{
+.theme-1 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.theme-1.initial-text{
+.theme-1 .initial-text{
   color: white;
-}
-/*CalendarModal.css*/
-.theme-1.DayPicker{
-  background-color: white;
-}
-.theme-1.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-1.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-1.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
 }
 /*Checkbox.css*/
-.theme-1#checkbox{
+.theme-1 #checkbox{
   border: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
-.theme-1 .st0{
+.theme-1  .st0{
     fill:rgba(0,0,0,0);
     stroke:white;
 }
 /*TodoItem.css*/
-.theme-1.todo{
+.theme-1 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-1.edit-button svg{
+.theme-1 .edit-button svg{
   fill: white;
 }
-.theme-1.todo-content{
+.theme-1 .todo-content{
   color: white;
 }
-.theme-1.todo-content.completed{
+.theme-1 .todo-content.completed{
   color: darkgray;
 }
-input#edit.theme-1{
+.theme-1 input#edit{
   color: white;
   border-bottom: 1px solid white;
   background-color: rgba(0,0,0,0)
 }
-span.dueDate.theme-1{
+.theme-1 span.dueDate{
   color: #EAD379;
 }
 /*TodoList.css*/
-.theme-1.create-todo{
+.theme-1 .create-todo{
   color: white;
   border-bottom: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
-.theme-1.create-todo::-webkit-input-placeholder {
+.theme-1 .create-todo::-webkit-input-placeholder {
   color: white;
 }
 /*DayOfWeek*/
-.theme-1.underline{
+.theme-1 .underline{
   color: white;
 }
-.theme-1.underline.completed{
+.theme-1 .underline.completed{
   color: #EAD379;
 }
 
@@ -209,59 +176,42 @@ span.dueDate.theme-1{
 .theme-2.App{
   background-color: #F4F4ED;
 }
-.theme-2 .burger-menu-piece{
+.theme-2  .burger-menu-piece{
   border-top: 3px solid #243B6C;
 }
 /*CalendarButton.css*/
-.theme-2.calendar-button #calendar{
+.theme-2 .calendar-button #calendar{
   fill: darkgray;
 }
-.theme-2.calendar-button:hover #calendar{
+.theme-2 .calendar-button:hover #calendar{
   fill: #243B6C;
 }
 /*DeleteButton.css*/
-.theme-2.delete-button span.lib, .theme-2.delete-button span.can{
+.theme-2 .delete-button span.lib, .theme-2 .delete-button span.can{
   background-color: darkgray;
 }
-.theme-2.delete-button:hover .lib, .theme-2.delete-button:hover .can{
+.theme-2 .delete-button:hover .lib, .theme-2 .delete-button:hover .can{
   background-color: #243B6C;
 }
 /*App.css*/
-.theme-2.toggle-showall-button{
+.theme-2 .toggle-showall-button{
   border: 2px #243B6C solid;
   color: #243B6C;
   background-color: rgba(0,0,0,0);
 }
-.theme-2.toggle-showall-button:hover{
+.theme-2 .toggle-showall-button:hover{
   border-color: darkgray;
   color: darkgray;
 }
-.theme-2.toggle-showall-button:active{
+.theme-2 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.theme-2.initial-text{
+.theme-2 .initial-text{
   color: #243B6C;
 }
-/*CalendarModal.css*/
-.theme-2.DayPicker{
-  background-color: white;
-}
-.theme-2.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-2.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-2.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
-}
 /*Checkbox.css*/
-.theme-2#checkbox{
+.theme-2 #checkbox{
   border: 2px solid #243B6C;
   background-color: rgba(0,0,0,0);
 }
@@ -270,39 +220,39 @@ span.dueDate.theme-1{
     stroke:#243B6C;
 }
 /*TodoItem.css*/
-.theme-2.todo{
+.theme-2 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-2.edit-button svg{
+.theme-2 .edit-button svg{
   fill: #243B6C;
 }
-.theme-2.todo-content{
+.theme-2 .todo-content{
   color: #243B6C;
 }
-.theme-2.todo-content.completed{
+.theme-2 .todo-content.completed{
   color: darkgray;
 }
-input#edit.theme-2{
+.theme-2 input#edit{
   color: #243B6C;
   border-bottom: 1px solid #243B6C;
   background-color: rgba(0,0,0,0)
 }
-span.dueDate.theme-2{
+.theme-2 span.dueDate{
   color: salmon;
 }
 /*TodoList.css*/
-.theme-2.create-todo{
+.theme-2 .create-todo{
   border-bottom: 2px solid #243B6C;
   background-color: rgba(0,0,0,0);
 }
-.theme-2.create-todo::-webkit-input-placeholder {
+.theme-2 .create-todo::-webkit-input-placeholder {
   color: #243B6C;
 }
 /*DayOfWeek*/
-.theme-2.underline{
+.theme-2 .underline{
   color: lightgray;
 }
-.theme-2.underline.completed{
+.theme-2 .underline.completed{
   color: #243B6C;
 }
 
@@ -317,55 +267,38 @@ span.dueDate.theme-2{
   border-top: 3px solid #287225;
 }
 /*CalendarButton.css*/
-.theme-3.calendar-button #calendar{
+.theme-3 .calendar-button #calendar{
   fill: white;
 }
-.theme-3.calendar-button:hover #calendar{
+.theme-3 .calendar-button:hover #calendar{
   fill: #287225;
 }
 /*DeleteButton.css*/
-.theme-3.delete-button span.lib, .theme-3.delete-button span.can{
+.theme-3 .delete-button span.lib, .theme-3 .delete-button span.can{
   background-color: white;
 }
-.theme-3.delete-button:hover .lib, .theme-3.delete-button:hover .can{
+.theme-3 .delete-button:hover .lib, .theme-3 .delete-button:hover .can{
   background-color: #287225;
 }
 /*App.css*/
-.theme-3.toggle-showall-button{
+.theme-3 .toggle-showall-button{
   border: 2px white solid;
   color: white;
   background-color: rgba(0,0,0,0);
 }
-.theme-3.toggle-showall-button:hover{
+.theme-3 .toggle-showall-button:hover{
   border-color: lightgray;
   color: lightgray;
 }
-.theme-3.toggle-showall-button:active{
+.theme-3 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.theme-3.initial-text{
+.theme-3 .initial-text{
   color: white;
-}
-/*CalendarModal.css*/
-.theme-3.DayPicker{
-  background-color: white;
-}
-.theme-3.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-3.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-3.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
 }
 /*Checkbox.css*/
-.theme-3#checkbox{
+.theme-3 #checkbox{
   border: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
@@ -374,40 +307,40 @@ span.dueDate.theme-2{
     stroke:white;
 }
 /*TodoItem.css*/
-.theme-3.todo{
+.theme-3 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-3.edit-button svg{
+.theme-3 .edit-button svg{
   fill: white;
 }
-.theme-3.todo-content{
+.theme-3 .todo-content{
   color: white;
 }
-.theme-3.todo-content.completed{
+.theme-3 .todo-content.completed{
   color: #88B45B;
 }
-input#edit.theme-3{
+.theme-3 input#edit{
   color: white;
   border-bottom: 1px solid white;
   background-color: rgba(0,0,0,0)
 }
-span.dueDate.theme-3{
+.theme-3 span.dueDate{
   color: #287225;
 }
 /*TodoList.css*/
-.theme-3.create-todo{
+.theme-3  .create-todo{
   color: white;
   border-bottom: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
-.theme-3.create-todo::-webkit-input-placeholder {
+.theme-3  .create-todo::-webkit-input-placeholder {
   color: white;
 }
 /*DayOfWeek*/
-.theme-3.underline{
+.theme-3  .underline{
   color: white;
 }
-.theme-3.underline.completed{
+.theme-3  .underline.completed{
   color: #287225;
 }
 
@@ -421,55 +354,38 @@ span.dueDate.theme-3{
   border-top: 3px solid white;
 }
 /*CalendarButton.css*/
-.theme-4.calendar-button #calendar{
+.theme-4 .calendar-button #calendar{
   fill: white;
 }
-.theme-4.calendar-button:hover #calendar{
+.theme-4 .calendar-button:hover #calendar{
   fill: darkgray;
 }
 /*DeleteButton.css*/
-.theme-4.delete-button span.lib, .theme-4.delete-button span.can{
+.theme-4 .delete-button span.lib, .theme-4 .delete-button span.can{
   background-color: white;
 }
-.theme-4.delete-button:hover .lib, .theme-4.delete-button:hover .can{
+.theme-4 .delete-button:hover .lib, .theme-4 .delete-button:hover .can{
   background-color: darkgray;
 }
 /*App.css*/
-.theme-4.toggle-showall-button{
+.theme-4 .toggle-showall-button{
   border: 2px white solid;
   color: white;
   background-color: rgba(0,0,0,0);
 }
-.theme-4.toggle-showall-button:hover{
+.theme-4 .toggle-showall-button:hover{
   border-color: lightgray;
   color: lightgray;
 }
-.theme-4.toggle-showall-button:active{
+.theme-4 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.theme-4.initial-text{
+.theme-4 .initial-text{
   color: white;
-}
-/*CalendarModal.css*/
-.theme-4.DayPicker{
-  background-color: white;
-}
-.theme-4.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-4.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-4.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
 }
 /*Checkbox.css*/
-.theme-4#checkbox{
+.theme-4 #checkbox{
   border: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
@@ -478,40 +394,40 @@ span.dueDate.theme-3{
     stroke:white;
 }
 /*TodoItem.css*/
-.theme-4.todo{
+.theme-4 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-4.edit-button svg{
+.theme-4 .edit-button svg{
   fill: white;
 }
-.theme-4.todo-content{
+.theme-4 .todo-content{
   color: white;
 }
-.theme-4.todo-content.completed{
+.theme-4 .todo-content.completed{
   color: purple;
 }
-input#edit.theme-4{
+.theme-4 input#edit{
   color: white;
   border-bottom: 1px solid white;
   background-color: rgba(0,0,0,0)
 }
-span.dueDate.theme-4{
+.theme-4 span.dueDate{
   color: cyan;
 }
 /*TodoList.css*/
-.theme-4.create-todo{
+.theme-4 .create-todo{
   color: white;
   border-bottom: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
-.theme-4.create-todo::-webkit-input-placeholder {
+.theme-4 .create-todo::-webkit-input-placeholder {
   color: white;
 }
 /*DayOfWeek*/
-.theme-4.underline{
+.theme-4 .underline{
   color: white;
 }
-.theme-4.underline.completed{
+.theme-4 .underline.completed{
   color: cyan;
 }
 
@@ -525,55 +441,38 @@ span.dueDate.theme-4{
   border-top: 3px solid white;
 }
 /*CalendarButton.css*/
-.theme-5.calendar-button #calendar{
+.theme-5 .calendar-button #calendar{
   fill: white;
 }
-.theme-5.calendar-button:hover #calendar{
+.theme-5 .calendar-button:hover #calendar{
   fill: lightgray;
 }
 /*DeleteButton.css*/
-.theme-5.delete-button span.lib, .theme-5.delete-button span.can{
+.theme-5 .delete-button span.lib, .theme-5 .delete-button span.can{
   background-color: white;
 }
-.theme-5.delete-button:hover .lib, .theme-5.delete-button:hover .can{
+.theme-5 .delete-button:hover .lib, .theme-5 .delete-button:hover .can{
   background-color: lightgray;
 }
 /*App.css*/
-.theme-5.toggle-showall-button{
+.theme-5 .toggle-showall-button{
   border: 2px white solid;
   color: white;
   background-color: rgba(0,0,0,0);
 }
-.theme-5.toggle-showall-button:hover{
+.theme-5 .toggle-showall-button:hover{
   border-color: lightgray;
   color: lightgray;
 }
-.theme-5.toggle-showall-button:active{
+.theme-5 .toggle-showall-button:active{
   border-color: gray;
   color: gray;
 }
-.theme-5.initial-text{
+.theme-5 .initial-text{
   color: white;
-}
-/*CalendarModal.css*/
-.theme-5.DayPicker{
-  background-color: white;
-}
-.theme-5.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.theme-5.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.theme-5.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
 }
 /*Checkbox.css*/
-.theme-5#checkbox{
+.theme-5 #checkbox{
   border: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
@@ -582,39 +481,39 @@ span.dueDate.theme-4{
     stroke:white;
 }
 /*TodoItem.css*/
-.theme-5.todo{
+.theme-5 .todo{
   border-bottom: 1px solid #DDDDDD;
 }
-.theme-5.edit-button svg{
+.theme-5 .edit-button svg{
   fill: white;
 }
-.theme-5.todo-content{
+.theme-5 .todo-content{
   color: white;
 }
-.theme-5.todo-content.completed{
+.theme-5 .todo-content.completed{
   color: lightgray;
 }
-input#edit.theme-5{
+.theme-5 input#edit{
   color: white;
   border-bottom: 1px solid white;
   background-color: rgba(0,0,0,0)
 }
-span.dueDate.theme-5{
+.theme-5 span.dueDate{
   color: #83ff00;
 }
 /*TodoList.css*/
-.theme-5.create-todo{
+.theme-5 .create-todo{
   color: white;
   border-bottom: 2px solid white;
   background-color: rgba(0,0,0,0);
 }
-.theme-5.create-todo::-webkit-input-placeholder {
+.theme-5 .create-todo::-webkit-input-placeholder {
   color: white;
 }
 /*DayOfWeek*/
-.theme-5.underline{
+.theme-5 .underline{
   color: white;
 }
-.theme-5.underline.completed{
+.theme-5 .underline.completed{
   color: #83ff00;
 }

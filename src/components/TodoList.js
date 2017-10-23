@@ -59,14 +59,14 @@ export default class TodoList extends React.Component{
       <div className="todolist-container">
 
         <input
-          className={this.props.themeNumber + " create-todo"}
+          className="create-todo"
           value={this.state.newTodo}
           onChange={(e)=>{this.setState({newTodo:e.target.value})}}
           onKeyPress={this.handleCreateNewTask.bind(this)}
           placeholder={this.state.timeNow}
         />
 
-        {this.props.todos.length===0 ? <span className={this.props.themeNumber + " initial-text"}></span> : null}
+        {this.props.todos.length===0 ? <span className="initial-text"></span> : null}
 
         {this.props.editing ?
             this.props.todos.map((item)=>{
@@ -84,7 +84,6 @@ export default class TodoList extends React.Component{
                   startEditMode={()=>{this.props.startEditMode(item.id)}}
                   endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
                   handleOpenCalendar={()=>{this.props.handleOpenCalendar(item.id)}}
-                  themeNumber={this.props.themeNumber}
                 />)
               } else {
                 return null;
@@ -119,7 +118,6 @@ export default class TodoList extends React.Component{
                                   startEditMode={()=>{this.props.startEditMode(item.id)}}
                                   endEditMode={(newName)=>{this.props.endEditMode(item.id, newName)}}
                                   handleOpenCalendar={()=>{this.props.handleOpenCalendar(item.id)}}
-                                  themeNumber={this.props.themeNumber}
                                 />
 
                               </div>

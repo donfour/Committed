@@ -6,7 +6,7 @@ export default class DayOfWeek extends React.Component{
     onHover: false
   }
   render(){
-    var underlineClass = this.props.themeNumber + " underline";
+    var underlineClass = "underline";
     if(this.props.completed || this.state.onHover){
       underlineClass += " completed";
     }

@@ -14,7 +14,7 @@ export default class SideMenu extends React.Component{
   }
   render(){
     return(
-        <div className={this.props.themeNumber + " SideMenu"}>
+        <div className="SideMenu">
           <div className="menu-header">
             <div className="extension-name">
               Committed
@@ -50,9 +50,7 @@ export default class SideMenu extends React.Component{
             Author's note
           </div>
           <div className="menu-footer">
-            <DevFoxButton
-              themeNumber={this.props.themeNumber}
-            />
+            <DevFoxButton />
           </div>
         </div>
     )
