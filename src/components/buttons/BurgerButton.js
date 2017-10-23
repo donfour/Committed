@@ -5,7 +5,7 @@ export default class BurgerButton extends React.Component{
   render(){
     return(
           <div
-            className="burger-click-region"
+            className={this.props.themeNumber + " burger-click-region"}
             onClick={this.props.onSetSidebarOpen}
           >
             <span className="burger-menu-piece"></span>

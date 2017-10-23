@@ -3,7 +3,7 @@ import $ from "jquery";
 import './css/App.css';
 import './css/ColorThemes.css';
 import TodoList from './components/TodoList';
-import CalendarModal from './components/CalendarModal';
+import CalendarModal from './components/modals/CalendarModal';
 import SideMenu from './components/SideMenu';
 import BurgerButton from './components/buttons/BurgerButton';
 import Sidebar from 'react-sidebar';
@@ -16,7 +16,7 @@ class App extends Component {
     // initialize state
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     const counter = localStorage.getItem('counter') || 0;
-    const themeNumber = localStorage.getItem('themeNumber') || "theme-0";
+    const themeNumber = localStorage.getItem('themeNumber') || "theme-4";
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
@@ -205,6 +205,14 @@ class App extends Component {
       break;
 
       default:
+        alert('error in toggle show, resorting to show all')
+        for(var i=0; i<todos.length; i++){
+          todos[i].render = true;
+        }
+        this.setState({
+          displayMode: 'SHOW ALL',
+          todos
+        })
       break;
     }
   }
@@ -240,6 +248,13 @@ class App extends Component {
     this.handleCloseCalendar();
   }
 
+  handleSelectTheme(theme){
+    this.setState({
+      themeNumber: theme
+    })
+    localStorage.setItem('themeNumber', theme);
+  }
+
   onSetSidebarOpen() {
     // burger button credits to: https://codepen.io/keenode/pen/dPqdPd?editors=1010
     var clickDelay = 500,
@@ -266,6 +281,55 @@ class App extends Component {
   }
 
   render() {
+    const sideMenuStyle = {
+      root: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        overflow: 'hidden',
+      },
+      sidebar: {
+        zIndex: 2,
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        transition: 'transform .3s ease-out',
+        WebkitTransition: '-webkit-transform .3s ease-out',
+        willChange: 'transform',
+        overflowY: 'auto',
+      },
+      content: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        overflowY: 'scroll',
+        WebkitOverflowScrolling: 'touch',
+        transition: 'left .3s ease-out, right .3s ease-out',
+      },
+      overlay: {
+        zIndex: 1,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0,
+        visibility: 'hidden',
+        transition: 'opacity .3s ease-out, visibility .3s ease-out',
+        backgroundColor: 'rgba(0,0,0,.3)',
+      },
+      dragHandle: {
+        zIndex: 1,
+        position: 'fixed',
+        top: 0,
+        bottom: 0,
+      },
+    };
+
     return (
       <Sidebar
         sidebar={
@@ -273,16 +337,26 @@ class App extends Component {
             themeNumber={this.state.themeNumber}
             toggleShowAll={this.toggleShowAll.bind(this)}
             displayMode={this.state.displayMode}
+            handleSelectTheme={this.handleSelectTheme.bind(this)}
           />
         }
         docked={this.state.sidebarOpen}
+        styles={sideMenuStyle}
       >
                <div className={this.state.themeNumber + " App"}>
+
+                 <button
+                   className={this.state.themeNumber + " toggle-showall-button"}
+                   onClick={this.toggleShowAll.bind(this)}
+                 >
+                   {this.state.displayMode}
+                 </button>
 
                  <div className="button-containers">
                    {/* burger button */}
                    <BurgerButton
                      onSetSidebarOpen={this.onSetSidebarOpen.bind(this)}
+                     themeNumber={this.state.themeNumber}
                    />
                  </div>
 

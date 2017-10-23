@@ -29,6 +29,28 @@ div.button-containers{
   font-size: 16px;
 }
 
+.toggle-showall-button{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 22px;
+  transition: all 0.3s;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+}
+
+.toggle-showall-button:hover{
+  cursor: pointer;
+}
+
+.toggle-showall-button:active{
+  transition: none;
+}
+
+.toggle-showall-button:focus{
+  outline: none;
+}
+
 @media (max-width: 500px) {
   .fox-icon-container, .github-icon-container, .toggle-showall-button{
     display: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/CalendarModal.css';
+import '../../css/CalendarModal.css';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import ReactModal from 'react-modal';

@@ -9,7 +9,7 @@
   display: block;
   position: absolute;
   width: 25px;
-  border-top: 3px solid gray;
+  /*border-top: 3px solid gray;*/
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   -webkit-transition: -webkit-transform 400ms ease-out;
@@ -18,10 +18,10 @@
   transition: transform 400ms ease-out, -webkit-transform 400ms ease-out;
 }
 .burger-menu-piece:nth-child(1) {
-  top: 10px;
+  top: 15px;
 }
 .burger-menu-piece:nth-child(2) {
-  top: 18px;
+  top: 23px;
   opacity: 1;
   -webkit-transition: opacity 0ms linear 200ms, -webkit-transform 400ms ease-out;
   transition: opacity 0ms linear 200ms, -webkit-transform 400ms ease-out;
@@ -29,7 +29,7 @@
   transition: transform 400ms ease-out, opacity 0ms linear 200ms, -webkit-transform 400ms ease-out;
 }
 .burger-menu-piece:nth-child(3) {
-  top: 26px;
+  top: 31px;
 }
 .active .burger-menu-piece:nth-child(1) {
   -webkit-animation: burger-open-top 400ms ease-out forwards;

@@ -1,25 +1,93 @@
 .SideMenu{
-  width: 150px;
+  width: 155px;
   display: flex;
   flex-direction: column;
+  color: gray;
+  height:100%;
 }
 
-.toggle-showall-button{
+.menu-header{
+  margin-bottom: 10px;
+  padding: 10px
+}
+
+.menu-header .extension-name{
   text-transform: uppercase;
   letter-spacing: 2px;
-  height: 22px;
-  transition: all 0.3s;
-  margin-top: 9px;
 }
 
-.toggle-showall-button:hover{
+.menu-header .extension-version{
+  color: lightgray;
+  font-size: 12px;
+}
+.menu-item{
+  padding: 10px;
+}
+
+.menu-item:hover{
+  background-color: #EEEEEE;
   cursor: pointer;
 }
 
-.toggle-showall-button:active{
-  transition: none;
+.menu-item:active{
+  background-color: lightgray;
 }
 
-.toggle-showall-button:focus{
-  outline: none;
+.menu-footer{
+  height:100%;
+}
+/* themes option */
+.themes{
+  height: 130px;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.theme-option{
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+.theme-option:hover{
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.row:first-child .theme-option:nth-child(1){
+  background-color: white;
+  border: solid 2px salmon;
+  color: gray;
+}
+.row:first-child .theme-option:nth-child(2){
+  background-color: #142F43;
+  color: white;
+  height: 24px;
+  width: 24px;
+}
+.row:first-child .theme-option:nth-child(3){
+  background-color: #F4F4ED;
+  color: #243B6C;
+  border: solid 2px #243B6C;
+}
+.row:last-child .theme-option:nth-child(1){
+  background-color: #56ab2f;
+  color: white;
+  height: 24px;
+  width: 24px;
+}
+.row:last-child .theme-option:nth-child(2){
+  background-color: #DA22FF;
+  color: white;
+  height: 24px;
+  width: 24px;
+}
+.row:last-child .theme-option:nth-child(3){
+  background-color: #ec008c;
+  color: white;
+  height: 24px;
+  width: 24px;
 }

@@ -2,6 +2,9 @@
 .theme-0.App{
   background-color: white;
 }
+.theme-0 .burger-menu-piece{
+  border-top: 3px solid gray;
+}
 /*CalendarButton.css*/
 .theme-0.calendar-button #calendar{
   fill: lightgray;
@@ -104,6 +107,9 @@ span.dueDate.theme-0{
 .theme-1.App{
   background-color: #142F43;
 }
+.theme-1 .burger-menu-piece{
+  border-top: 3px solid #EAD379;
+}
 /*CalendarButton.css*/
 .theme-1.calendar-button #calendar{
   fill: white;
@@ -202,6 +208,9 @@ span.dueDate.theme-1{
 /* Theme 2: Vintage theme */
 .theme-2.App{
   background-color: #F4F4ED;
+}
+.theme-2 .burger-menu-piece{
+  border-top: 3px solid #243B6C;
 }
 /*CalendarButton.css*/
 .theme-2.calendar-button #calendar{
@@ -304,6 +313,9 @@ span.dueDate.theme-2{
   background: -webkit-linear-gradient(to right, #a8e063, #88B45B);
   background: linear-gradient(to right, #a8e063, #88B45B);
 }
+.theme-3 .burger-menu-piece{
+  border-top: 3px solid #287225;
+}
 /*CalendarButton.css*/
 .theme-3.calendar-button #calendar{
   fill: white;
@@ -405,6 +417,9 @@ span.dueDate.theme-3{
   background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.theme-4 .burger-menu-piece{
+  border-top: 3px solid white;
+}
 /*CalendarButton.css*/
 .theme-4.calendar-button #calendar{
   fill: white;
@@ -505,6 +520,9 @@ span.dueDate.theme-4{
   background: #ec008c;
   background: -webkit-linear-gradient(to right, #fc6767, #ec008c);
   background: linear-gradient(to right, #fc6767, #ec008c);
+}
+.theme-5 .burger-menu-piece{
+  border-top: 3px solid white;
 }
 /*CalendarButton.css*/
 .theme-5.calendar-button #calendar{
