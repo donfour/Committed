@@ -14,8 +14,8 @@ export default class AuthorsNoteModal extends React.Component{
         >
           Author's note
           Dear beautiful human being,
-          Thank you for being Committed's one of first few hundred users.
-          As I'm adding more and more features, I'm planning to start charging a small fee from new users soon to support Comitted's development, and also my tuition and living expenses (yes I'm a student).
+          Thank you for being Committed's one of first few hundred users!
+          As I'm adding more and more features, I'm planning to start charging a small fee from new users soon in order to support Comitted's development, and also my tuition and living expenses (yes I'm a student).
           As a token of my appreciation, you'll be able to use Committed for free and receive all future updates forever.
           If you like Committed, this is a good time to tell your friends and families to get it while it's still free.
           Also leave a review or feature suggestion on the Chrome web store!
