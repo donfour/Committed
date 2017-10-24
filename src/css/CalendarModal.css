@@ -30,19 +30,6 @@
 .DayPicker{
   background-color: white;
 }
-.remove-duedate-button{
-  border: 2px white solid;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-.remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
-}
-.remove-duedate-button:active{
-  border-color: gray;
-  color: gray;
-}
 
 .Overlay{
   width: 100%;
@@ -56,26 +43,22 @@
   display: flex;
   flex-direction: column;
 }
-
 .remove-duedate-button{
+  border: none;
+  background-color: salmon;
+  color: white;
   text-transform: uppercase;
   margin-top: 5px;
   letter-spacing: 2px;
   width: 100%;
   height: 22px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .remove-duedate-button:hover{
-  border-color: gray;
-  color: gray;
   cursor: pointer;
-}
-
-.remove-duedate-button:active{
-  border-color: gray;
+  background-color: white;
   color: gray;
-  transition: none;
 }
 
 .remove-duedate-button:focus{

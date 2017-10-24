@@ -39,10 +39,6 @@
 .theme-0 .initial-text{
   color: darkgray;
 }
-/*CalendarModal.css*/
-.Modal{
-  background-color: rgba(0,0,0,0.3);
-}
 /*Checkbox.css*/
 .theme-0 #checkbox{
   border: 2px solid black;

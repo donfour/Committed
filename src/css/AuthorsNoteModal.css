@@ -1,0 +1,33 @@
+.authors-note-modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+.authors-note-modal-content{
+  background-color: white;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 10px #888888;
+}
+
+.authors-note-modal-content{
+  padding: 20px;
+}
+
+.authors-note-modal-content ol{
+  margin:0;
+  margin-top:10px;
+}
+
+.header{
+  color: salmon;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.authors-note-modal-content div{
+  margin: 10px;
+}

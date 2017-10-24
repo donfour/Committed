@@ -1,15 +1,27 @@
 import React from 'react';
 import '../css/SideMenu.css';
 import DevFoxButton from './buttons/DevFoxButton';
+import AuthorsNoteModal from './modals/AuthorsNoteModal';
 import { Collapse } from 'react-collapse';
 
 export default class SideMenu extends React.Component{
   state = {
-    themeOptionsOpened: false
+    themeOptionsOpened: false,
+    AuthorsNoteModalOpened: false
   }
   onChooseThemeClick(){
     this.setState({
       themeOptionsOpened: !this.state.themeOptionsOpened
+    })
+  }
+  onAuthorsNoteClick(){
+    this.setState({
+      AuthorsNoteModalOpened: !this.state.AuthorsNoteModalOpened
+    })
+  }
+  onCloseAuthorsNoteClick(){
+    this.setState({
+      AuthorsNoteModalOpened: false
     })
   }
   render(){
@@ -46,9 +58,16 @@ export default class SideMenu extends React.Component{
           </Collapse>
 
 
-          <div className="menu-item">
+          <div
+            className="menu-item"
+            onClick={this.onAuthorsNoteClick.bind(this)}
+          >
             Author's note
           </div>
+          <AuthorsNoteModal
+            AuthorsNoteModalOpened={this.state.AuthorsNoteModalOpened}
+            onCloseAuthorsNoteClick={this.onCloseAuthorsNoteClick.bind(this)}
+          />
           <div className="menu-footer">
             <DevFoxButton />
           </div>
