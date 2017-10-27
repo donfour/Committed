@@ -7,16 +7,20 @@ import CalendarModal from './components/modals/CalendarModal';
 import SideMenu from './components/SideMenu';
 import BurgerButton from './components/buttons/BurgerButton';
 import Sidebar from 'react-sidebar';
-
+/* global chrome */
 
 class App extends Component {
   constructor(props){
     super(props);
 
     // initialize state
-    const todos = JSON.parse(localStorage.getItem('todos')) || [];
-    const counter = localStorage.getItem('counter') || 0;
-    const themeNumber = localStorage.getItem('themeNumber') || "theme-0";
+    var todos;
+    var counter;
+    var themeNumber;
+    // localStorage for backwards compatibility
+    chrome.storage.sync.get('todos', function(result){todos = result || JSON.parse(localStorage.getItem('todos')) || []; console.log('Retrieved todos from chrome storage'); })
+    chrome.storage.sync.get('counter', function(result){counter = result || localStorage.getItem('counter') || 0; console.log('Retrieved counter from chrome storage'); })
+    chrome.storage.sync.get('themeNumber', function(result){themeNumber = result || localStorage.getItem('themeNumber') || "theme-0"; console.log('Retrieved themeNumber from chrome storage');})
 
     var timeNow = new Date();
     console.log('timeNow.toDateString()', timeNow.toDateString());
@@ -52,6 +56,10 @@ class App extends Component {
       sidebarOpen: false
     }
     localStorage.setItem('todos', JSON.stringify(todos));
+    chrome.storage.sync.set({'todos': todos}, function() {
+      // Notify that we saved.
+      console.log('Saved todos to chrome storage');
+    });
   }
 
   createNewTask(taskName){
@@ -73,6 +81,14 @@ class App extends Component {
     // save results
     localStorage.setItem('todos', JSON.stringify(newTodoList));
     localStorage.setItem('counter', parseInt(this.state.counter, 10) + 1);
+    chrome.storage.sync.set({'todos': newTodoList}, function() {
+      // Notify that we saved.
+      console.log('Saved todos to chrome storage');
+    });
+    chrome.storage.sync.set({'counter': parseInt(this.state.counter, 10) + 1}, function() {
+      // Notify that we saved.
+      console.log('Saved counter to chrome storage');
+    });
     this.setState({
       counter: parseInt(this.state.counter, 10) + 1,
       todos: newTodoList
@@ -84,6 +100,10 @@ class App extends Component {
       todos: newTodoList
     })
     localStorage.setItem('todos', JSON.stringify(newTodoList));
+    chrome.storage.sync.set({'todos': newTodoList}, function() {
+      // Notify that we saved.
+      console.log('Saved todos to Chrome storage');
+    });
   }
 
   toggleTaskCompletion(taskId){
@@ -253,6 +273,10 @@ class App extends Component {
       themeNumber: theme
     })
     localStorage.setItem('themeNumber', theme);
+    chrome.storage.sync.set({'themeNumber': theme}, function() {
+      // Notify that we saved.
+      console.log('Saved themeNumber to Chrome storage');
+    });
   }
 
   onSetSidebarOpen() {

@@ -13,5 +13,8 @@
   },
   "icons": {
     "128": "icon128.png"
-  }
+  },
+  "permissions": [
+    "storage"
+  ]
 }
