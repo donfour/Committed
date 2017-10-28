@@ -13,53 +13,70 @@ class App extends Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      counter:0,
+      todos: JSON.parse(localStorage.getItem('todos')) || [],
+      displayMode: 'SHOW ALL',
+      calendarModalForTaskId: 0,
+      showCalendar: false,
+      themeNumber: localStorage.getItem('themeNumber') || 'theme-0',
+      sidebarOpen: false
+    }
+
     // initialize state
     var todos;
     var counter;
     var themeNumber;
-    // localStorage for backwards compatibility
-    chrome.storage.sync.get('todos', function(result){todos = result || JSON.parse(localStorage.getItem('todos')) || []; console.log('Retrieved todos from chrome storage'); })
-    chrome.storage.sync.get('counter', function(result){counter = result || localStorage.getItem('counter') || 0; console.log('Retrieved counter from chrome storage'); })
-    chrome.storage.sync.get('themeNumber', function(result){themeNumber = result || localStorage.getItem('themeNumber') || "theme-0"; console.log('Retrieved themeNumber from chrome storage');})
+    chrome.storage.sync.get(['todos', 'counter', 'themeNumber'], function(result){
+      todos = result.todos || JSON.parse(localStorage.getItem('todos')) || [];
+      counter = result.counter || localStorage.getItem('counter') || 0;
+      themeNumber = result.themeNumber || localStorage.getItem('themeNumber') || 'theme-0';
 
-    var timeNow = new Date();
-    console.log('timeNow.toDateString()', timeNow.toDateString());
-    // remove completed one-time todos
-    for(var i=0; i<todos.length; i++){
-      // check if the todo is repeating, i.e. one-time
-      var isRepeating = false;
-      for(var j=0; j<todos[i].daysOfWeek.length; j++){
-        if(todos[i].daysOfWeek[j]){
-          isRepeating = true;
-          break;
+      console.log('Retrieved todos from chrome storage:', todos);
+      console.log('Retrieved todos from chrome storage:', counter);
+      console.log('Retrieved todos from chrome storage:', themeNumber);
+
+      var timeNow = new Date();
+      console.log('timeNow.toDateString()', timeNow.toDateString());
+      // remove completed one-time todos
+      for(var i=0; i<todos.length; i++){
+        // check if the todo is repeating, i.e. one-time
+        var isRepeating = false;
+        for(var j=0; j<todos[i].daysOfWeek.length; j++){
+          if(todos[i].daysOfWeek[j]){
+            isRepeating = true;
+            break;
+          }
+        }
+        if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== timeNow.toDateString()){
+          todos.splice(i,1);
+          i--;
+          continue;
+        }
+        if(!isRepeating && !todos[i].completed){
+          todos[i].render = true;
+        }
+        if(isRepeating){
+          todos[i].render = true;
         }
       }
-      if(!isRepeating && todos[i].completed && todos[i].dayCompleted !== timeNow.toDateString()){
-        todos.splice(i,1);
-        i--;
-        continue;
+      this.state = {
+        counter,
+        todos,
+        displayMode: 'SHOW ALL',
+        calendarModalForTaskId: 0,
+        showCalendar: false,
+        themeNumber,
+        sidebarOpen: false
       }
-      if(!isRepeating && !todos[i].completed){
-        todos[i].render = true;
-      }
-      if(isRepeating){
-        todos[i].render = true;
-      }
-    }
-    this.state = {
-      counter,
-      todos,
-      displayMode: 'SHOW ALL',
-      calendarModalForTaskId: 0,
-      showCalendar: false,
-      themeNumber,
-      sidebarOpen: false
-    }
-    localStorage.setItem('todos', JSON.stringify(todos));
-    chrome.storage.sync.set({'todos': todos}, function() {
-      // Notify that we saved.
-      console.log('Saved todos to chrome storage');
-    });
+      localStorage.setItem('todos', JSON.stringify(todos));
+      chrome.storage.sync.set({'todos': todos}, function() {
+        // Notify that we saved.
+        console.log('Saved todos to chrome storage');
+      });
+
+    })
+
   }
 
   createNewTask(taskName){
