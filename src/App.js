@@ -22,11 +22,13 @@ class App extends Component {
       themeNumber: localStorage.getItem('themeNumber') || 'theme-0',
       sidebarOpen: false
     }
+    console.log('Loaded default state');
 
     // initialize state
     var todos;
     var counter;
     var themeNumber;
+    const self = this;
     chrome.storage.sync.get(['todos', 'counter', 'themeNumber'], function(result){
       todos = result.todos || JSON.parse(localStorage.getItem('todos')) || [];
       counter = result.counter || localStorage.getItem('counter') || 0;
@@ -60,7 +62,7 @@ class App extends Component {
           todos[i].render = true;
         }
       }
-      this.state = {
+      self.setState({
         counter,
         todos,
         displayMode: 'SHOW ALL',
@@ -68,7 +70,7 @@ class App extends Component {
         showCalendar: false,
         themeNumber,
         sidebarOpen: false
-      }
+      });
       localStorage.setItem('todos', JSON.stringify(todos));
       chrome.storage.sync.set({'todos': todos}, function() {
         // Notify that we saved.
