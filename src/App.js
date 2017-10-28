@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      counter:0,
+      counter: localStorage.getItem('counter') || 0,
       todos: JSON.parse(localStorage.getItem('todos')) || [],
       displayMode: 'SHOW ALL',
       calendarModalForTaskId: 0,
