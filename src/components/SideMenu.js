@@ -32,7 +32,7 @@ export default class SideMenu extends React.Component{
               Committed
             </div>
             <div className="extension-version">
-              v1.1.1
+              v2.0.0
             </div>
           </div>
 

@@ -29,7 +29,7 @@ export default class AuthorsNoteModal extends React.Component{
               </ol>
             </div>
             <div>
-              As I'm adding more and more features, I'm planning to start charging a small fee from new users soon in order to support Comitted's development, and also my tuition and living expenses.
+              As I'm adding more and more features, I'm planning to start charging a small fee from new users in order to support Comitted's development, and also my tuition and living expenses.
             </div>
             <div>
               However, as a token of my appreciation, you'll be able to use Committed for free and receive all future updates forever.
