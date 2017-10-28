@@ -14,6 +14,7 @@
 .menu-header .extension-name{
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .menu-header .extension-version{
@@ -22,6 +23,7 @@
 }
 .menu-item{
   padding: 10px;
+  font-size: 16px;
 }
 
 .menu-item:hover{
