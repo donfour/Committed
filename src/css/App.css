@@ -52,8 +52,8 @@ div.button-containers{
 }
 
 @media (max-width: 500px) {
-  .fox-icon-container, .github-icon-container, .toggle-showall-button{
-    display: none;
+  .button-containers, .fox-icon-container, .github-icon-container, .toggle-showall-button{
+    display: none !important;
   }
   .initial-text{
     padding:0;
