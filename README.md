@@ -1,3 +1,6 @@
+### Warning
+I have rewritten Committed so I will no longer update this repo. Check out the new Committed [here](https://github.com/donfour/committed2)!
+
 ## Committed
 
 Manage your weekly goals and todos in a minimalist Chrome NewTab extension.
